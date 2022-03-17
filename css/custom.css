@@ -1,0 +1,1101 @@
+@font-face{font-family:'azo-sans';src:url('../fonts/AzoSans-Light-webfont.eot');src:url('../fonts/AzoSans-Light-webfontd41d.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AzoSans-Light-webfont.woff') format('woff'),
+    url('../fonts/AzoSans-Light-webfont.ttf') format('truetype'),
+    url('../fonts/AzoSans-Light-webfont.svg#azo_sanslight') format('svg');font-weight:300;font-style:normal;}
+    @font-face{font-family:'azo-sans';src:url('../fonts/AzoSans-Medium-webfont.eot');src:url('../fonts/AzoSans-Medium-webfontd41d.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AzoSans-Medium-webfont.woff') format('woff'),
+    url('../fonts/AzoSans-Medium-webfont.ttf') format('truetype'),
+    url('../fonts/AzoSans-Medium-webfont.svg#azo_sansmedium') format('svg');font-weight:500;font-style:normal;}
+    @font-face{font-family:'azo-sans';src:url('../fonts/AzoSans-Thin-webfont.eot');src:url('../fonts/AzoSans-Thin-webfontd41d.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AzoSans-Thin-webfont.woff') format('woff'),
+    url('../fonts/AzoSans-Thin-webfont.ttf') format('truetype'),
+    url('../fonts/AzoSans-Thin-webfont.svg#azo_sansthin') format('svg');font-weight:200;font-style:normal;}
+    @font-face{font-family:'azo-sans';src:url('../fonts/AzoSans-Medium-webfont.eot');src:url('../fonts/AzoSans-Medium-webfontd41d.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AzoSans-Medium-webfont.woff') format('woff'),
+    url('../fonts/AzoSans-Medium-webfont.ttf') format('truetype'),
+    url('../fonts/AzoSans-Medium-webfont.svg#azo_sansmedium') format('svg');font-weight:700;font-style:normal;}
+    @font-face{font-family:"azo-sans-web";font-style:normal;font-weight:200;src:url("../fonts/AzoSans-Thin-webfontd41d.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/AzoSans-Thin-webfont.woff") format("woff"),
+    url("../fonts/AzoSans-Thin-webfont.ttf") format("truetype"),
+    url("../fonts/AzoSans-Thin-webfont.svg#azo_sansthin") format("svg");}
+    @font-face {
+      font-family: 'Ubuntu Condensed';
+      src: url('fonts/Ubuntu-C.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TrebuchetMS';
+      src: url('fonts/TrebuchetMS.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PTSansNarrowRegular';
+      src: url('fonts/ptn57f-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+        background-size: cover;background-repeat: no-repeat;
+    }
+    /* header */
+    header {
+        background: #ffffff !important;
+    }
+    .header-bg .top-contact-info .tg-barinfo{
+        color: #ffffff;
+    }
+    .header-bg .top-contact-info .tg-barinfo strong i{
+        color: #ffffff !important
+    }
+    .tg-header .tg-navigation li a {
+        font-family: 'Josefin Sans';font-weight: 500;
+        font-size: 12px;color: #615e5e;
+    }
+    .tg-header .tg-navigation li button {
+        font-family: 'Josefin Sans';
+    }
+    .tg-header .tg-navigation li button {
+        margin: 2px 8px;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    
+    .navbar {
+        text-transform: uppercase;
+        font-weight: 500;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .7rem;background: #ffffff;
+        line-height: 12px;
+        letter-spacing: .1rem;
+    }
+    .navbar-brand img{
+        margin-top: -1rem;
+    }
+    .navbar-collapse {
+        width: 100%;margin:0 auto 0 0 ;padding-top:0;z-index: 2;float: right;
+    }
+    .navbar-nav li {
+        padding-right: 0;font-size: 1rem;font-weight: 700;margin-right:0;
+        font-family:'Ubuntu';cursor: pointer;
+    }
+    .navbar-nav li.nav-item a.nav-link {
+        color: #ffffff;
+    }
+    .navbar-nav .dropdown-menu {
+        margin-top: .7rem;text-align: left;background: #c4c7c4;
+    }
+    .navbar-nav .dropdown-menu a.dropdown-item {
+        color: #481c6b;font-size: .8rem;font-weight: 600;margin: .6rem 1rem 1rem .1rem;text-align: left;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+        padding-top: .8rem;
+    }
+    .navbar-dark .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #565658;
+    }
+    
+    .dl-menuwrapper .dl-menu ul li a{
+        color: #615e5e !important;
+    }
+    
+    /* .main-wrapper {
+        position: relative;background: url(../images/bd-background.png);background-size: cover;background-repeat: no-repeat;
+    } */
+
+    .video-intro {
+        width: 100%;height:750px;position: relative;background: url(../images/btc-earngif.gif);background-size: cover;background-repeat: no-repeat;
+    }
+    video.video {
+        height: 100%;width: 100%;
+    }
+     .video-content {
+        position: absolute;
+        bottom: 0;
+        color: #f1f1f1;
+        top: 0;z-index: 10;
+        width: 100%;
+        padding: 0;
+        font-family:'Poppins';text-transform: capitalize;text-align: center;
+    }
+    .video-content .c-holder {
+        position: relative;
+    }
+    .video-content h1 {
+        font-size: 78px;font-weight: 900;
+    }
+     .video-content h2 {
+        font-size: 58px;font-weight: 900;padding: 4rem auto;margin: 2rem auto;
+    }
+     .video-content p {
+        font-size: 38px;font-weight: 900;padding: 4rem auto;margin: 2rem auto;
+    }
+    .viddeo-content .anchor-link {
+        padding: 4rem auto;margin: 4rem auto;
+    }
+     .video-content .anchor-link a {
+        font-size: 18px;font-weight: 900;background:#44c5ec;color: #ffffff;padding: 2rem 2rem;z-index: 20;
+        border-radius: 50px;text-decoration: none;margin: 4rem auto;position: relative;cursor: pointer;
+    }
+     .headone {
+        display: none;
+    }
+     .headtwo {
+        display: none;
+    }
+     .paragleft {
+        display: none;
+    }
+     .paragleft2 {
+        display: none;
+    }
+     .linkard {
+        display: none;
+    }
+    .bs-slider-overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index:10;
+        width: 100%;
+        right: 0;
+        transition: .5s ease;
+        background-color: #000000;
+        opacity: .2;
+        overflow:hidden;
+    }
+     .video-content .anchor-link {
+        margin: 4rem auto;
+    }
+    .container-wrapper {
+        padding: 1rem 5rem;font-family: 'PT Sans';
+    }
+    .faq-head h2 {
+        font-family: 'Josefin Sans';color: #2785c4;margin-left: 2rem;padding: 2rem 0;
+    }
+    .panel {
+        margin-top: 2rem;
+    }
+    a.accordion-toggle {
+        font-family:'Josefin Sans';
+    }
+    .panel-collapse {
+        display: none;
+    }
+    .toggle-faq {
+        cursor: pointer;
+    }
+    section {
+        margin: 2rem auto;
+    }
+    .anchor-link {
+        margin: 2rem auto;text-align: center;
+    }
+    .anchor-link a {
+        font-size: 14px;font-weight: 600;background:#44c5ec;color: #ffffff;padding: 2rem auto;
+        border-radius: 50px;text-decoration: none;margin: 2rem auto;text-align: center;
+    }
+    .img-overlay {
+        background-color: rgba(0,0,0,0.1); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+    .content-section-wrapper {
+        background: #ffffff;margin-top: -20rem;
+    }
+    #tickerwrap {
+        position: fixed;top: 0;z-index:10;height: 40px;display: none;
+    }
+    #ticker {
+        width: 100%;
+        background-color: #c9eef5;
+        font-size: 1.2em;
+        color: #2785c4;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 50px;
+        text-align: center;
+    }
+    #tickerwrap .lista {
+        display: inline-block;
+    }
+    #tickerwrap .lista ul {
+        float: left;width: 100%;position: relative;
+    }
+    #tickerwrap .lista ul li{
+        list-style:none;margin: .4rem 1rem .2rem 1rem;
+        border-right:1px solid #f5f5f5;padding-right: .6rem; 
+    } 
+    #tickerwrap .lista ul li .marqueespan {
+        font-size: .8em;color: #481c6b;font-family: 'Oswald';
+    }
+    .invest-section-wrapper {
+        position: relative;background: url(../images/invest-bg.jpg);background-size: cover;background-repeat: no-repeat;
+    }
+    .invest-section-wrapper .invest-sect-overlay {
+        background-color: #ffffff;margin:0;padding:0;opacity: .7;
+    }
+    .invest-section-wrapper .invest-options {
+        font-family: 'Roboto';color: #424246;text-transform:uppercase;
+        margin: 5rem auto 6rem auto;padding: 3rem auto;border-bottom: 2px solid #f1f1f1;
+    }
+    .invest-section-wrapper h2 a {
+        font-family: 'Josefin Sans';color: #424246;
+    }
+    .invest-section-wrapper .invest-in {
+        border-bottom: 2px solid #f1f1f1;
+    }
+    .invest-section-wrapper img {
+        margin: auto 0 auto -1rem; 
+    }
+    .invest-section-wrapper .i-optin {
+        padding:1rem 5rem 1rem 5rem;margin: 2rem auto;
+    }
+    .invest-section-wrapper .invest-sect-overlay  p {
+        font-size: 16px;color: #424246;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;
+    }
+    .invest-section-wrapper .invest-sect-overlay p .anchor-link a {
+        padding: .1rem auto;text-align: center;margin: 1rem auto;color: #424246;
+    }
+    /* .invest-section-wrapper .invest-sect-overlay img{
+        margin: .2rem auto;height: 25rem;width: 35rem;
+    }
+    .invest-section-wrapper .invest-sect-overlay .invest-intro {
+        width: 60%;
+    } */
+    .retirement-section-wrapper {
+        position: relative;background: #ffffff;background-size: cover;background-repeat: no-repeat;
+    }
+    .retirement-section-wrapper .invest-sect-overlay {
+        background-color: #ffffff;margin:0;padding:0;opacity: .7;
+    }
+    .retirement-section-wrapper .retirement-options {
+        font-family: 'Ubuntu';color: #76767a;text-transform:uppercase;
+        margin: 5rem auto 6rem auto;padding: 3rem auto;border-bottom: 2px solid #f1f1f1;
+    }
+    .retirement-section-wrapper .head-optin {
+        margin: auto 4rem auto 4rem;padding-left: 2%;
+    }
+    .retirement-section-wrapper .ret-arrange {
+        text-align: center;margin: 1rem 2rem 1rem 3rem; border:1px solid #e6e3e3;
+        border-radius: 3px;
+    }
+    .retirement-section-wrapper h2 a {
+        font-family: 'Ubuntu';color: #76767a;
+    }
+    .retirement-section-wrapper .i-optin {
+        margin:1rem auto;padding: 2rem auto;border-bottom: 2px solid #f1f1f1;
+        text-align: center;
+    }
+    .retirement-section-wrapper .retirement-sect-overlay  p {
+        font-size: 16px;color: #76767a;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;
+    }
+    .retirement-section-wrapper .retirement-sect-overlay p .anchor-link a {
+        padding: .1rem auto;text-align: center;margin: 1rem auto;color: #76767a;
+    }
+    /* .retirement-section-wrapper .retirement-sect-overlay img{
+        margin: .2rem auto;height: 30rem;width: 40rem;
+    }
+    .retirement-section-wrapper .retirement-sect-overlay .invest-intro {
+        width: 70%;
+    } */
+    .invest-bg {
+        background: url(../images/brokeagain.jpg) 0 0 no-repeat;margin: 2rem auto;padding: 1rem auto;
+        min-height: 350px;max-height: 400px;border-radius: 50%;height:350px;width:350px;max-width:350px;
+    }
+    .content-section-wrapper h3 {
+        font-family: 'Roboto';margin: 5rem auto 2rem auto;
+        font-weight: 600;text-align:center;text-transform: capitalize;
+    }
+    .content-section-wrapper p {
+        font-size: 16px;margin-left: 2rem;text-align:left;
+    }
+    .investors-counter{
+        background: url(../images/bitcoin.jpg) 0 0 no-repeat;margin: 2rem auto;padding: 1rem auto;
+        background-size: cover;
+    }
+    .investors-counter .counter-overlay {
+        background-color: #000000;margin:0;padding:0;opacity: .7;
+    }
+    .investors-counter h1 {
+        margin-top:  5rem;
+    }
+    .investors-counter .status-marks {
+        margin: 8rem auto 6rem auto;font-size: 2.4rem;
+    }
+    .section-full {
+        background: url(../images/stock1.jpg) 0 0 no-repeat;margin: 2rem auto;padding: 1rem auto;
+        background-size: cover;
+    }
+    .section-full .overlay-me {
+        background-color: #000000;margin:0;padding:0;opacity: .7;
+    }
+    .section-full h2 {
+        margin-top:  5rem;font-size: 3rem;
+    }
+    .section-full h3 {
+        margin-top:  2rem;font-size: 2em;font-weight: 600;margin-bottom: 1rem; 
+    }
+    .section-full p {
+        text-transform: capitalize; 
+    }
+    .section-full h4 {
+        margin-top:  1rem;font-size: 1em;font-weight: 600;margin-bottom: .6rem; 
+    }
+    .section-full .step-number {
+        margin-top:  2rem;font-size: .8em;font-weight: 600;margin-bottom: 1rem; font-family: 'Ubuntu';
+    }
+    .section-full .step-number-block {
+        margin: 3rem auto 2rem auto;font-size: 2rem;
+    }
+    .section-full .step-number-block a .icon-set{
+        margin: 2rem auto 1rem auto;font-size: 4rem;color: #2785c4;
+    }
+    .why-bitcoin-section-wrapper {
+        background: #ffffff;background-size: cover;
+    }
+    .why-bitcoin-section-wrapper h1 {
+        font-family: 'Ubuntu';margin: 5rem auto 2rem auto;
+        text-align:center;text-transform: capitalize;font-weight: 600;
+    } 
+    .why-bitcoin-section-wrapper p {
+        font-size: 16px;margin-left: 2rem;text-align:left;
+    }
+    .why-btc-bg {
+        background: url(../images/bitcoinnew.jpg) 0 0 no-repeat;
+        margin: 2rem auto;padding: 1rem auto 3rem auto;
+        min-height: 250px;max-height: 250px;border-radius: 50%;height:250px;width:250px;max-width:250px;
+    }
+    .invest-bg, .why-btc-bg {
+        background-size: cover;
+        position: relative;
+    }   
+    .invest-bg .overlay-effect, .why-btc-bg .overlay-effect {
+        opacity: 1;height: 350px;width: 350px;border-radius: 50%;
+    }
+    .why-btc-bg .overlay-effect {
+        opacity: 1;height: 250px;width: 250px;border-radius: 50%;
+    }
+    .overlay-effect {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: rgba(0,0,0, 0.1);
+        overflow:hidden;
+    }
+    .invest-bg ,
+    .why-btc-bg  {
+        color: #fff;
+    }
+    .invest-bg h3,
+    .why-btc-bg h3,
+    .why-btc-bg2 h3 {
+        padding: 15px 30px;
+    }
+    .whyus {
+        background-color: #ffffff;padding: 4rem auto;
+    }
+    .unit {
+        font-size: 5rem;color: #2785c4;
+    }
+    .whyus .why-us{
+        font-family: 'Roboto';margin: 5rem auto 2rem auto;text-align:center;text-transform: capitalize;
+    }
+    .whyus .team-in h1 {
+        text-transform: uppercase;font-family:'Ubuntu';
+    }
+    .members-pay-out {
+        font-family: 'Ubuntu';background-color: #ffffff;text-align: center;
+        padding: 1rem 3rem;color: #9a9a9a;
+    }
+    .meet-our-team {
+        background-color: #ffffff;padding: 4rem auto;
+    }
+    .meet-our-team .team-in {
+        font-family: 'Roboto';margin: 5rem auto 2rem auto;text-align:center;text-transform: capitalize;
+    }
+    .meet-our-team .team-in h1 {
+        text-transform: uppercase;color: #9a9a9a;font-family: 'Ubuntu';
+    }
+    .meet-our-team .ceo{
+        width: 50%;padding: 1rem auto;margin: .5rem auto;
+    }
+    .meet-our-team .client.card .client-info{
+        margin: 2rem 2rem;padding: 0 .3rem;text-align: left;
+    }
+    .meet-our-team .client.card .client-social{
+        margin: 2rem 1rem;padding: 0 .3rem;text-align: center;
+    }
+    .meet-our-team .client.card .client-social a {
+        margin: 0;padding:0;color: #7a7a7a;
+    }
+    .meet-our-team .client.card .client-social a i{
+        margin:.5rem 1rem;color: #7a7a7a;; 
+    }
+    .boost-your-future {
+        background-color: #ffffff;background-size: cover;
+    }
+    .boost-your-future h1 {
+        font-size: 48px;font-family: 'Josefin Sans';margin: 5rem auto 2rem auto;text-align:center;text-transform: uppercase;
+    }
+    .boost-your-future h2 {
+        font-size: 48px;font-family: 'Poppins';;margin: 5rem auto 2rem auto;text-align:center;text-transform: uppercase;
+        color: #272ac4;
+    }
+    .boost-bg {
+        background: url(../images/people+shutterstock.jpg) 0 0 no-repeat;
+        margin: 5rem auto;padding: 3rem auto 3rem auto;background-size: cover;
+        min-height: 250px;max-height: 250px;border-radius: 50%;height:250px;width:250px;max-width:250px;
+    }
+    .client-testimony-section {
+        background: #FFFFFF;
+    }
+    .client-testimony-section h2 {
+        color: #000;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        margin: 30px 0 70px;
+    }
+    .client-testimony-section h2::after {
+        content: "";
+        width: 100px;
+        position: absolute;
+        margin: 0 auto;
+        height: 4px;
+        border-radius: 1px;
+        background: #1c47e3;
+        left: 0;
+        right: 0;
+        bottom: -20px;
+    }
+    .client-testimony-section .carousel {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+    .client-testimony-section .carousel .item {
+        color: #999;
+        font-size: 14px;
+        text-align: center;
+        overflow: hidden;
+        min-height: 340px;
+    }
+    .client-testimony-section .carousel .item a {
+        color: #eb7245;
+    }
+    .client-testimony-section .carousel .testimonial {	
+        padding: 0 0 10px;text-align: left;
+    }
+    .client-testimony-section .carousel .overview {	
+        text-align: center;
+        padding-bottom: 5px;
+    }
+    .client-testimony-section .carousel .overview b {
+        color: #333;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: block;	
+        padding-bottom: 5px;
+    }
+    .client-testimony-section .carousel .star-rating i {
+        font-size: 18px;
+        color: #ffdc12;
+    }
+    .client-testimony-section .carousel .carousel-control {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #999;
+        text-shadow: none;
+        top: 4px;
+    }
+    .client-testimony-section .carousel-control i {
+        font-size: 20px;
+        margin-right: 2px;
+    }
+    .client-testimony-section .carousel-control.left {
+        left: auto;
+        right: 40px;
+    }
+    .client-testimony-section .carousel-control.right i {
+        margin-right: -2px;
+    }
+    .client-testimony-section .carousel .carousel-indicators {
+        bottom: 15px;margin-bottom: 15px;
+    }
+    .client-testimony-section .carousel-indicators li, .carousel-indicators li.active {
+        width: 11px;
+        height: 11px;
+        margin: 1px 5px;
+        border-radius: 50%;
+    }
+    .client-testimony-section .carousel-indicators li {	
+        background: #e2e2e2;
+        border-color: transparent;
+    }
+    .carou p {
+        font-size: 14px;font-weight: normal;
+    }
+    .client-testimony-section .carousel-indicators li.active {
+        border: none;
+        background: #888;		
+    }
+    .feedback-form {
+        margin: 3rem auto 5rem auto;border-bottom: 1px solid #e7e3e3;padding-bottom: 4rem;
+    }
+    .feedback-form h2 {
+        font-family: 'Roboto';margin: 3rem auto;text-align: center;
+    }
+    .footer-widget {
+        background-color: #f1f1f1;background-size: cover;margin-bottom: 0;padding-bottom:0;
+    }
+    .footer-widget .footer-widget-sect {
+        margin: 5rem auto;padding: 2rem auto;
+    }
+    .footer-widget .footer-widget-sect h2 {
+        font-family: 'Josefin Sans';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+    }
+    .footer-widget .footer-widget-sect ul {
+        list-style: none;
+    }
+    .footer-widget .footer-widget-sect ul li {
+        list-style: none;
+    }
+    .footer-widget .footer-widget-sect ul li a{
+        font-family: 'Josefin Sans';color: #7a7a7a;
+        text-decoration: none;font-size: 14px;
+    }
+    .footer-widget .footer-widget-sect ul li a:hover{
+       color: #2785c4;
+    }
+    .footer-main {
+        background: #e0e0e2 !important;margin: auto;
+    }
+    .footer-main .footer-intro {
+        margin: 5rem auto;padding: 1rem auto;
+    }
+    .footer-main .footer-intro h2 {
+        font-family: 'Josefin Sans';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+    }
+    .footer-main .footer-intro p {
+        font-size: 14px;color: #7a7a7a;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;text-transform: capitalize;
+    }
+    .footer-main .data-security {
+        margin: 5rem auto;padding: 1rem auto;
+    }
+    .footer-main .data-security .sec img.moneyback {
+        width: 8rem;margin-bottom: 1rem;
+    }
+    .footer-main .data-security .sec img.secured2 {
+        width: 17rem;margin-bottom: 1rem;
+    }
+    .footer-main .data-security p{
+        font-size: 14px;color: #7a7a7a;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;text-transform: capitalize;
+    }
+    .footer-main .copywright {
+        margin: 5rem auto;padding: 1rem auto;
+    }
+
+
+    @media screen and (max-width: 1268px) {
+        .video-content .c-holder {
+            margin-top: 5rem;
+        }
+        .video-content h1 {
+            font-size: 58px;font-weight: 900;margin-top: 2rem;
+        }
+         .video-content h1.h1-type {
+            font-size: 48px;font-weight: 900;margin-top: 2rem;display: none;
+        }
+         .video-content h2 {
+            font-size: 48px;font-weight: 900;display:block;margin:2rem auto;padding: 2rem auto;
+        }
+         .video-content h2.we-hap {
+            font-size: 48px;font-weight: 900;display:none;margin:2rem auto;padding: 2rem auto;
+        }
+         .video-content .hide-po {
+            font-size: 26px;font-weight: 900;display:block;margin:2rem auto;padding: 2rem auto;
+        }
+         .video-content p {
+            font-size: 26px;font-weight: 900;margin:2rem auto;padding: 2rem auto;
+        }
+        .viddeo-content .anchor-link {
+            padding: 1rem auto;margin: 2rem auto;
+        }
+         .video-content .anchor-link a {
+            font-size: 12px;padding: 1rem 1rem;z-index: 20;
+            border-radius: 50px;text-decoration: none;margin: 2rem auto;
+        }
+
+    }
+
+    @media screen and (max-width: 768px) {
+    .video-content .c-holder {
+        margin-top: 2rem;
+    }
+    .video-content h1 {
+        font-size: 48px;font-weight: 900;margin-top: 2rem;
+    }
+     .video-content h1.h1-type {
+        font-size: 38px;font-weight: 900;margin-top: 2rem;display: none;
+    }
+     .video-content h2 {
+        font-size: 38px;font-weight: 900;display:block;margin:1rem auto;padding: 1rem auto;
+    }
+     .video-content h2.we-hap {
+        font-size: 38px;font-weight: 900;display:none;margin:1rem auto;padding: 1rem auto;
+    }
+     .video-content .hide-po {
+        font-size: 16px;font-weight: 900;display:block;margin:2rem auto;padding: 1rem auto;
+    }
+     .video-content p {
+        font-size: 16px;font-weight: 900;margin:2rem auto;padding: 1rem auto;
+    }
+    .viddeo-content .anchor-link {
+        padding: 1rem auto;margin: 1rem auto;
+    }
+     .video-content .anchor-link a {
+        font-size: 12px;padding: 1rem 1rem;z-index: 20;
+        border-radius: 50px;text-decoration: none;margin: 2rem auto;
+    }
+    .carousel-container .video-content .bs-slider-overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index:10;
+        right: 0;
+        transition: .5s ease;
+        background-color: #000000;
+        opacity: .2;
+        overflow:hidden;
+    }
+     .video-content .anchor-link {
+        margin: 1rem auto;
+    }
+    .invest-bg, .why-btc-bg, .why-btc-bg2 {margin-bottom: 10px;}
+    .invest-bg, .why-btc-bg, .why-btc-bg2 {margin-bottom: 10px;}
+    .anchor-link {
+        margin: 1rem auto;
+    }
+    .anchor-link a {
+        font-size: 12px;padding: 1rem auto;margin: 1rem auto;text-align: center;
+    }
+    .payment-channel-warning h2 {
+        font-size: 18px;
+    }
+    .payment-channel-warning h4 {
+        font-size: 16px;
+    }
+    .content-section-wrapper h3 {
+        margin: 2rem auto 2rem auto;padding: 0;font-size: 22px;font-weight: 600;
+    }
+    .content-section-wrapper p {
+        font-size: 16px;padding: 0;margin:0;
+    }
+    .investors-counter h1 {
+        margin-top:  3rem;font-size: 18px;
+    }
+    .investors-counter .status-marks {
+        margin: 2rem auto 1rem auto;font-size: 1.6rem;
+    }
+    .section-full h2 {
+        margin-top:  3rem;font-size: 2.2rem;
+    }
+    .section-full h3 {
+        margin-top:  1rem;font-size: 1.6em;font-weight: 600;margin-bottom: .4rem; 
+    }
+    .section-full h4 {
+        margin-top:  .6rem;font-size: .8em;font-weight: 600;margin-bottom: .4rem; 
+    }
+    .section-full .step-number {
+        margin-top:  1rem;
+    }
+    .section-full .step-number-block {
+        margin: 1rem auto 1rem auto;font-size: 1.8rem;
+    }
+    .section-full .step-number-block a .icon-set{
+        margin: 2rem auto 1rem auto;font-size: 4rem;color: #2785c4;
+    }
+    .invest-bg {
+        margin: 2rem auto;padding: 1rem auto;
+        min-height: 250px;max-height: 250px;border-radius: 50%;height:250px;width:250px;max-width:280px;
+    }
+    .invest-bg .overlay-effect, .why-btc-bg .overlay-effect {
+        height: 250px;width: 250px;
+    }
+    .invest-section-wrapper .invest-options {
+        font-size: 24px;font-weight: 600;
+        margin: 2rem auto 3rem auto;padding: 1rem auto;
+    }
+    /* .invest-section-wrapper .invest-sect-overlay img{
+        margin: .2rem auto;height: 20rem;width: 35rem;
+    }
+    .invest-section-wrapper .invest-sect-overlay .invest-intro {
+        width: 95%;
+    } */
+    .retirement-section-wrapper .retirement-options {
+        font-size: 28px;font-weight: 600;margin: 2rem auto 3rem auto;
+        padding: 1rem auto;
+    }
+    .retirement-section-wrapper .head-optin {
+        padding-left: 0;
+    }
+    .retirement-section-wrapper .ret-arrange {
+        margin: 1rem 2rem 1rem 0; 
+    }
+    .retirement-section-wrapper h2 a {
+        font-size: 16px;
+    }
+    /* .retirement-section-wrapper .retirement-sect-overlay img{
+        margin: .2rem auto;height: 90%;width: 95%;
+    }
+    .retirement-section-wrapper .retirement-sect-overlay .invest-intro {
+        width: 95%;
+    } */
+    .why-bitcoin-section-wrapper h1 {
+        margin: 2rem auto 1rem auto;font-size: 20px;font-weight: 600;padding-left:1rem;padding-left:1rem;
+    }
+    .why-btc-bg {
+        margin: 2rem auto;padding: 1rem auto;
+        min-height: 300px;max-height: 300px;border-radius: 50%;height:300px;width:300px;max-width:300px;
+    }
+    .why-btc-bg .overlay-effect {
+        height: 300px;width: 300px;
+    }
+    .whyus {
+        background-color: #ffffff;padding: 2rem auto;
+    }
+    .whyus .why-us{
+        margin: 3rem auto 2rem auto;
+    }
+    .whyus .why-us h1{
+        margin: 3rem auto 2rem auto;text-transform: uppercase;font-size: 20px;font-weight: 600;
+    }
+    .whyus .why-us h3{
+        margin: 3rem auto 2rem auto;text-transform: uppercase;font-size: 16px;font-weight: 600;
+    }
+    .meet-our-team {
+        background-color: #ffffff;padding: 4rem auto;
+    }
+    .meet-our-team .team-in {
+        font-family: 'Josefin Sans';margin: 5rem auto 2rem auto;text-align:center;text-transform: capitalize;
+    }
+    .meet-our-team .team-in h1 {
+        text-transform: uppercase;font-size: 24px;font-weight: 600;
+    }
+    .meet-our-team .ceo{
+        width: 80%;
+    }
+    .meet-our-team .client.card .client-title h3{
+        margin: 1rem auto;padding: 0 .3rem;text-align: center;font-size: 18px;
+        font-weight: 600;
+    }
+    .meet-our-team .client.card .client-title span{
+        margin: .1rem auto;padding: 0 .3rem;text-align: center;font-size: 14px;
+        font-weight: 500;
+    }
+    .meet-our-team .client.card .client-info{
+        margin: 2rem auto;padding: 0 .3rem;text-align: left;
+    }
+    .boost-your-future {
+        background-color: #ffffff;background-size: cover;
+    }
+    .boost-your-future h1 {
+        font-size: 28px;font-family: 'Josefin Sans';margin: 3rem auto 2rem auto;text-align:center;text-transform: uppercase;
+    }
+    .boost-your-future h2 {
+        font-size: 20px;font-family: 'Poppins';;margin: 3rem auto 2rem auto;text-align:center;text-transform: uppercase;
+    }
+    .boost-bg {
+        margin: 2rem auto;padding: 1rem auto 1rem auto;
+        min-height: 300px;max-height: 300px;height:300px;width:300px;max-width:300px;
+    }
+    .client-testimony-section .carousel .item .carou{
+        margin: 2rem auto;
+    }
+    .client-testimony-section .carousel .item .carou img {
+        padding: 2rem auto;
+    }
+    .footer-widget .footer-widget-sect {
+        margin: 2rem auto;padding: 1rem auto;
+    }
+    .footer-widget .footer-widget-sect h2 {
+        margin: 1rem auto 2rem auto;text-align:left;font-size: 16px;
+    }
+    .footer-main {
+        background: #e0e0e2 !important;margin: auto;
+    }
+    .trut fas{
+        text-align: center;
+    }
+    .trut h2{
+        margin: 1rem auto 2rem auto;text-align:center;font-size: 16px;color: #7a7a7a;
+    }
+    .footer-main .footer-intro {
+        margin: 3rem auto;padding: 1rem auto;
+    }
+    .footer-main .footer-intro h2 {
+        font-family: 'Josefin Sans';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+    }
+    .footer-main .footer-intro p {
+        font-size: 14px;color: #7a7a7a;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;text-transform: capitalize;
+    }
+    .footer-main .data-security {
+        margin: 3rem auto;padding: 1rem auto;
+    }
+    .footer-main .data-security .sec{
+        margin: 2rem auto;padding: 1rem auto;
+    }
+    .footer-main .data-security .sec img.moneyback {
+        width: 6rem;
+    }
+    .footer-main .data-security .sec img.secured2 {
+        width: 10rem;
+    }
+    .footer-main .data-security p{
+        font-size: 16px;color: #7a7a7a;margin: .5rem auto;
+        text-align: left;padding: .5rem auto;text-transform: capitalize;
+    }
+    .footer-main .copywright {
+        margin: 5rem auto;padding: 1rem auto;font-size: 12px;text-align: center;
+    }
+
+    }
+    .img-overlay {
+        background-color: rgba(0,0,0,0.1); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+    
+    
+
+    @media screen and (max-width: 468px) {
+        .video-content .c-holder {
+            margin-top: 2rem;
+        }
+        .video-content h1 {
+            font-size: 24px;font-weight: 900;margin-top: 2rem;
+        }
+         .video-content h1.h1-type {
+            font-size: 24px;font-weight: 900;margin-top: 2rem;display: none;
+        }
+         .video-content h2 {
+            font-size: 18px;font-weight: 900;display:none;padding: 1rem auto;margin: 1rem auto;
+        }
+         .video-content .hide-po {
+            font-size: 12px;font-weight: 900;display:none;padding: 1rem auto;margin: 1rem auto;
+        }
+         .video-content p {
+            font-size: 12px;font-weight: 900;padding: 1rem auto;margin: 1rem auto;
+        }
+        .viddeo-content .anchor-link {
+            padding: 1rem auto;margin: 1rem auto;
+        }
+         .video-content .anchor-link a {
+            font-size: 12px;padding: 1rem 1rem;z-index: 20;
+            border-radius: 50px;text-decoration: none;margin: 2rem auto;
+        }
+        .carousel-container .video-content .bs-slider-overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index:10;
+            right: 0;
+            transition: .5s ease;
+            background-color: #000000;
+            opacity: .2;
+            overflow:hidden;
+        }
+         .video-content .anchor-link {
+            margin: 1rem auto;
+        }
+        .anchor-link {
+            margin: 1rem auto;
+        }
+        .anchor-link a {
+            font-size: 12px;padding: 1rem auto;margin: 1rem auto;text-align: center;
+        }
+        .payment-channel-warning h2 {
+            font-size: 16px;
+        }
+        .payment-channel-warning h4 {
+            font-size: 16px;
+        }
+        .content-section-wrapper h3 {
+            margin: 2rem auto 2rem auto;padding: 0;font-size: 18px;font-weight: 600;
+        }
+        .content-section-wrapper p {
+            font-size: 16px;padding: 0;margin:0;
+        }
+        .invest-bg {
+            margin: 2rem auto;padding: 1rem auto;
+            min-height: 250px;max-height: 250px;border-radius: 50%;height:250px;width:250px;max-width:280px;
+        }
+        .invest-bg .overlay-effect, .why-btc-bg .overlay-effect {
+            height: 250px;width: 250px;
+        }
+        .invest-section-wrapper .invest-options {
+            font-size: 20px;font-weight: 600;
+            margin: 2rem auto 3rem auto;padding: 1rem auto;
+        }
+        /* .invest-section-wrapper .invest-sect-overlay img{
+            margin: .2rem auto;height: 20rem;width: 35rem;
+        }
+        .invest-section-wrapper .invest-sect-overlay .invest-intro {
+            width: 95%;
+        } */
+        .retirement-section-wrapper .retirement-options {
+            font-size: 20px;font-weight: 600;margin: 2rem auto 3rem auto;
+            padding: 1rem auto;
+        }
+        .retirement-section-wrapper .head-optin {
+            padding-left: 0;
+        }
+        .retirement-section-wrapper .ret-arrange {
+            margin: 1rem 2rem 1rem 0; 
+        }
+        .retirement-section-wrapper h2 a {
+            font-size: 16px;
+        }
+        /* .retirement-section-wrapper .retirement-sect-overlay img{
+            margin: .2rem auto;height: 90%;width: 95%;
+        }
+        .retirement-section-wrapper .retirement-sect-overlay .invest-intro {
+            width: 95%;
+        } */
+        .why-bitcoin-section-wrapper h1 {
+            margin: 2rem auto 1rem auto;font-size: 20px;font-weight: 600;padding-left:1rem;padding-left:1rem;
+        }
+        .why-btc-bg {
+            margin: 3rem auto;padding: 1rem auto 3rem auto;
+            min-height: 250px;max-height:250px;height:250px;width:250px;max-width:250px;
+        }
+        .why-btc-bg .overlay-effect {
+            height: 250px;width: 250px;
+        }
+        .whyus {
+            background-color: #ffffff;padding: 2rem auto;
+        }
+        .whyus .why-us{
+            margin: 3rem auto 2rem auto;
+        }
+        .whyus .why-us h1{
+            margin: 3rem auto 2rem auto;text-transform: uppercase;font-size: 20px;font-weight: 600;
+        }
+        .whyus .why-us h3{
+            margin: 3rem auto 2rem auto;text-transform: uppercase;font-size: 16px;font-weight: 600;
+        }
+        .meet-our-team {
+            background-color: #ffffff;padding: 4rem auto;
+        }
+        .meet-our-team .team-in {
+            font-family: 'Josefin Sans';margin: 5rem auto 2rem auto;text-align:center;text-transform: capitalize;
+        }
+        .meet-our-team .team-in h1 {
+            text-transform: uppercase;font-size: 20px;font-weight: 600;
+        }
+        .meet-our-team .ceo{
+            width: 95%;
+        }
+        .meet-our-team .client.card .client-title h3{
+            margin: 1rem auto;padding: 0 .3rem;text-align: center;font-size: 16px;
+            font-weight: 600;
+        }
+        .meet-our-team .client.card .client-title span{
+            margin: .1rem auto;padding: 0 .3rem;text-align: center;font-size: 14px;
+            font-weight: 500;
+        }
+        .meet-our-team .client.card .client-info{
+            margin: 2rem auto;padding: 0 .3rem;text-align: left;
+        }
+        .boost-your-future {
+            background-color: #ffffff;background-size: cover;
+        }
+        .boost-your-future h1 {
+            font-size: 28px;font-family: 'Josefin Sans';margin: 3rem auto 2rem auto;text-align:center;text-transform: uppercase;
+        }
+        .boost-your-future h2 {
+            font-size: 20px;font-family: 'Poppins';;margin: 3rem auto 2rem auto;text-align:center;text-transform: uppercase;
+        }
+        .boost-bg {
+            margin: 2rem auto;padding: 1rem auto 1rem auto;
+            min-height: 200px;max-height: 200px;height:200px;width:200px;max-width:200px;
+        }
+        .client-testimony-section .testi {
+            padding: 0;margin:0;
+        }
+        .client-testimony-section .carousel .item .carou{
+            margin: 4rem auto;border-bottom: 1px solid #aeaeae;
+        }
+        .client-testimony-section .carousel .item .carou img {
+            padding: 2rem auto;
+        }
+        .footer-widget .footer-widget-sect {
+            margin: 2rem auto;padding: 1rem auto;
+        }
+        .footer-widget .footer-widget-sect h2 {
+            margin: 1rem auto 2rem auto;text-align:left;font-size: 16px;
+        }
+        .footer-widget .contact_Btn {font-size: 12px;}
+        .footer-main {
+            background: #e0e0e2 !important;margin: auto;
+        }
+        .trut fas{
+            text-align: center;
+        }
+        .trut h2{
+            margin: 1rem auto 2rem auto;text-align:center;font-size: 16px;color: #7a7a7a;
+        }
+        .footer-main .footer-intro {
+            margin: 3rem auto;padding: 1rem auto;
+        }
+        .footer-main .footer-intro h2 {
+            font-family: 'Josefin Sans';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+        }
+        .footer-main .footer-intro p {
+            font-size: 14px;color: #7a7a7a;margin: .5rem auto;
+            text-align: left;padding: .5rem auto;text-transform: capitalize;
+        }
+        .footer-main .data-security {
+            margin: 3rem auto;padding: 1rem auto;
+        }
+        .footer-main .data-security .sec{
+            margin: 2rem auto;padding: 1rem auto;
+        }
+        .footer-main .data-security .sec img.moneyback {
+            width: 6rem;
+        }
+        .footer-main .data-security .sec img.secured2 {
+            width: 10rem;
+        }
+        .footer-main .data-security p{
+            font-size: 16px;color: #7a7a7a;margin: .5rem auto;
+            text-align: left;padding: .5rem auto;text-transform: capitalize;
+        }
+        .footer-main .copywright {
+            margin: 5rem auto;padding: 1rem auto;font-size: 12px;text-align: center;
+        }
+    }
+    

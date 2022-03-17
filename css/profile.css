@@ -1,0 +1,3219 @@
+/* global css */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ffffff;
+    font-size: 12px;
+    font-family: arial;
+    overflow-x: hidden;
+}
+#layer {
+    display: block;
+    opacity: .3;
+    background: #554f4f;
+    cursor: default;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    scroll-behavior: none;
+    overflow-y: hidden;
+    width:100%;
+    position: fixed;
+    z-index: 15;
+}
+header {
+    width: 100%;
+    height: 20px;
+    margin: 0 auto;
+    position: relative;
+    background: #3f3f3f;
+}
+header, main, footer {
+    padding-left: 240px;
+  }
+  .wrapper {
+    display: block;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* top layer */
+    z-index: 9999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+}
+/* display .overlay when it has the .active class */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}
+
+.nav {
+    width:100%;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 40px;
+    background: #f1f1f1;
+    border-bottom: 1px solid #cccccc;
+}
+.nav ul{
+    height: 40px;
+}
+.nav ul li {
+    list-style: none;
+    height:40px;
+    line-height: 30px;
+    position: relative;
+    float: left;
+}
+.search {
+    margin: 0em 0 0em 1em;
+    width: 45%;
+    height: 40px;
+    float: left;
+}
+.search form .form.box {
+    width: 100%;
+}
+.search form .form.box input[type=text]#search-input {
+    width:90%;height:2.6em;outline:none;border:1px solid #d8d8db;background:#ffffff;border-radius: 5px;font-size: 11px;font-weight: 700;color: #800080;padding: 0;margin: 0.26em .5em 0 auto;
+}
+.search form .form.box button#search-result {
+    width:auto;height:2em;outline:none;cursor:pointer;border:none;margin-left:-4px;background:transparent;font-weight: 700;font-size: 14px;color:#c7c7e0;
+}
+.search form#prevent-submit #kkkk{
+    width: 90%; background: #d3cdd2;  position: relative;color: #088888;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin: 0em 0 0 0%;z-index: 10;
+}
+ul #post-a-review {
+    float: right;
+    font-weight:700;
+    background: #3f3f63;
+    position: relative;
+    margin: 0% 5% 0 0; 
+    height:38px;
+    font-family: verdana;
+    font-size: 11px;
+    width: 130px;
+    color: #ffffff;
+    text-align: center;
+    border-radius:2px;
+    border: 1px solid #cccccc;
+}
+ul #post-a-review a {
+    text-decoration: none;color: #ffffff;font-family: verdana;
+    font-size: 11px;
+}
+ul #post-a-review #hetn {
+    height: 20px;
+    position: relative;
+    margin: 5% 0 0 0;
+    padding: 1.5%;
+    color: #ffffff;
+    cursor:pointer;
+}
+ul #post-a-review #hetan {
+    height: 20px;
+    margin: 5% 0 0 0;
+    padding: 1.5%;
+    color: #ffffff;position: relative;
+    cursor:pointer;
+}
+ul #post-a-review #hetsa {
+    height: 20px;
+    margin: 5% 0 0 0;
+    padding: 1.5%;position: relative;
+    color: #ffffff;
+    position: relative;
+    cursor:pointer;
+}
+#heta-info{
+    width:180%;display:none;position:absolute;font-size:12px;font-weight: normal;text-align:left;font-family:sans-serif;top:130%;z-index:9;font-weight:normal;background: #f1f1f1;color:#2e2e35;line-height: 20px;padding: .5em;margin: .1em 0 0 -.2em;border: 1px solid #b9bec4;border-radius: 4px;
+}
+#heta-info:after {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#heta-info:before {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #b9bec4;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#het-info{
+    width:180%;display:none;position:absolute;font-size:12px;font-weight: normal;text-align:left;font-family:sans-serif;top:130%;z-index:9;font-weight:normal;background: #f1f1f1;color:#2e2e35;line-height: 20px;padding: .5em;margin: .1em 0 0 -.2em;border: 1px solid #b9bec4;border-radius: 4px;
+}
+#het-info:after {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#het-info:before {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #b9bec4;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#hets-info{
+    width:180%;display:none;position:absolute;font-size:12px;font-weight: normal;text-align:left;font-family:sans-serif;top:130%;z-index:9;font-weight:normal;background: #f1f1f1;color:#2e2e35;line-height: 20px;padding: .5em;margin: .1em 0 0 -.2em;border: 1px solid #b9bec4;border-radius: 4px;
+}
+#hets-info:after {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#hets-info:before {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #b9bec4;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+#hetn:hover #het-info {
+    display: block;
+}
+#hetan:hover #heta-info {
+    display: block;
+}
+#hetsa:hover #hets-info {
+    display: block;
+}
+ul .notification {
+    float: right;
+    height:40px;
+    font-size: 12px;
+    width: 10%;
+    margin: -.3em 1% 0 0;
+    text-align: center;
+    position: relative;
+    background: #f1f1f1;
+}
+#notifyme {
+    color: #b9b4b4;margin-top:0.2em;
+}
+#notification-count {
+    display: block;margin: .4em 0em 0 0em;z-index: 9000;font-size: 14px;position: absolute;left: 43%;
+}
+ ul#list-notifications {
+    display: none;background: #f1f1f1;margin: 0 1% 0 -15em;width: 20em;position:relative;z-index: 1;border-radius: 5px;border: 1px solid #c8d1d1;
+}
+ul#list-notifications:after {
+    content:"";position:absolute;right:15%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+ul#list-notifications:before {
+    content:"";position:absolute;right:15%;bottom:100%; margin-right:0px;border-top:10px solid #c8d1d1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+ul .notification:hover ul#list-notifications {
+    display: block;
+}
+ul .notification:hover ul#list-notifications li {
+    background: #f1f1f1;height: 5em;border: 1px solid #dfd9d9;padding: .1em;width:100%;
+}
+ul .notification ul#list-notifications li ._holyer {
+    cursor:pointer;padding: .1em 0 0 0;margin:1em 1%;width: 100%;font-size: 12px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;z-index: 90;color:#696464;line-height: 15px;text-align: left;
+}
+ul .notification ul#list-notifications li ._holyer img.reminder {
+    width: 3em;height: 3em;padding: 0.1em .3em 0 0;margin: 0em 0.2em .5em 0.2em; float: left;border-radius: 3px;
+}
+ul .notification ul#list-notifications li ._holyer ._proper {
+    color: #ffffff; font-size: 12px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ul .notification ul#list-notifications li ._holyer ._properd {
+    color: #2e2d2d; font-size: 12px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ul .notification ul#list-notifications ._notifications.checked {
+    font-weight:500;font-size: 12px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin: 0em 0 0 .3em;padding-top: 1em;color: #414146;
+}
+form.checknot button[type=submit].submit.btn {
+    width: 80%;cursor:pointer;border:none;color:#5b5c58;background:transparent;margin: 0em auto;font-size: 13px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: left;
+}
+.nav ul li.in {
+   margin: 0em 1% 0em 10%;
+}
+.nav ul li.in a img#profile_pics {
+    width: 40px;
+    height:35px;
+    margin: 0.25em 0 0em 0;
+    border-radius: 3px;
+}
+ul li.in .user.act {
+    display: none;
+    position: absolute;
+    width: 200px;
+    background: #f1f1f1;
+    border-radius: 3px;
+    z-index: 9;
+    margin: -.5em 0 0 0;border: 1px solid #cfc6c6;
+}
+ul li.in .user.act ul li{
+    position: relative;
+    width: 100%;
+    line-height: 15px;
+    text-align: left;
+}
+ul li.in .user.act ul li#exupdate{
+    display: none;
+}
+ul li.in .user.act ul li#myprofile{
+    display: none;
+}
+#yopi {
+    margin: 2%;
+}
+#prof-list {
+    position: absolute;
+    margin: .8em 0 0 .2em;
+    font-size: 10px;
+    font-weight: 700;color: #b8b0b0;
+}
+#prof-list a {
+    text-decoration: none;
+}
+ul li.in .user.act ul li img#pimg{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 3% 0 0 2%;
+}
+ul li.in .user.act ul li a{
+    color: #7a196d;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-transform: capitalize;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+}
+ul li.in .user.act ul li a:hover{
+    border: none;color: #c2934d;
+}
+ul li.in .user.act:after {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+ul li.in .user.act:before {
+    content:"";position:absolute;left:5%;bottom:100%; margin-right:0px;border-top:10px solid #cfc6c6;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+ul li.in .user.act ul li#totalred{
+    cursor: default;
+}
+ul li.in:hover .user.act{
+    display: block;
+}
+#show-own-ad {
+    width:100%;height:inherit;z-index:10;position:fixed;background:#3f3f63;top:0%;display:none;
+}
+#show-own-ad ._ser {color: #ffffff;font-size:12px;font-weight: 700;padding: .3em 0 .5em 3em;text-transform: capitalize;cursor:default; }
+#show-own-ad ._ser a {text-decoration: none;color: #73d8e6;}
+#show-own-ad ._ser a:hover {color: #008000;}
+#show-own-ad ._ser:hover {
+    color: #fca1fc; 
+}
+#show-banner-ads {
+    width:50%;height:8em;margin: 4% auto;position: relative;
+}
+#show-banner-ads img#ad-img {
+    width:100%;height:8em;
+}
+#show-banner-ads #remove-ad {
+    position: absolute;top: 2%;right: 3%;color: #aeaab4;font-size:10px;
+}
+#show-banner-ads #remove-ad #etan-ad {
+    background: transparent;display: none;right:2%;margin-top:3%;color: #f7f2f2;font-size: 10px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#show-banner-ads #remove-ad #hut-ad {
+    font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+}
+#show-banner-ads #remove-ad:hover #etan-ad{
+    display: block;
+}
+.show.sidebar {
+    display:none;width: 2.5em;height: 2.2em;background: #878477;margin: -2em auto 0em 2%;z-index: 10;position: absolute;
+}
+.wrapper {
+    position: relative;
+}
+#circular-progress-bar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 40%;
+    display: block;z-index: 16;
+    margin-bottom: 10px;
+    padding: 2%;
+    border: 3px solid #088;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #a0aaaa;
+    border-right: 3px solid #a79f9f;
+    border-left: 3px solid #b1b0a5;
+    -webkit-animation: spin .8s infinite linear;
+    -moz-animation: spin .8s infinite linear;
+    animation: spin .8s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }to {
+        transform: rotate(360deg);
+    }
+}
+#circular-progress-bar1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 40%;
+    display: none;z-index: 16;
+    margin-bottom: 10px;
+    padding: 2%;
+    border: 3px solid #088;
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #e08967;
+    border-right: 3px solid #9ae9de;
+    border-left: 3px solid #b1b0a5;
+    -webkit-animation: spin .8s infinite linear;
+    -moz-animation: spin .8s infinite linear;
+    animation: spin .8s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }to {
+        transform: rotate(360deg);
+    }
+}
+.side.bar {
+    margin: 0em 1% 0 0;
+    width: 25%;
+    float: left;height: 100%;
+    background: #3f3f63;border: 1px solid #ebe7e4;
+}
+.main.content {
+    margin: 2em 0 3em 30%;
+    width: 65%;
+}
+#c-all {
+    width: 98%;margin: 0 auto ;position: relative;float: left;background: #ffffff;
+}
+#imgcot {
+    background: #969696;width: 98%;margin:4% auto; 
+}
+#imgshow {
+    width: 100%;height: 25em;margin: 0;border-radius: 3px;
+}
+#u-title {
+    text-transform: capitalize;font-family: verdana;text-align: center;line-height: 20px;font-size: 16px;color: #62626b;margin: 2% auto;font-weight:700;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.u-post {
+    line-height: 20px;font-size: 14px;margin: 1%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#u-img1 {
+    margin: 1% 3% 1% 1%;width: 50%;height: 20em;float:left;
+}
+#u-img2 {
+    margin: 1%;width: 98%;height: 25em;
+}
+#u-img3 {
+    margin: 1%;width: 80%;height: 23em;
+}
+#u-img4 {
+    margin: 1% 3% 1% 1%;width: 50%;height:20em;float:left;
+}
+#u-img5 {
+    margin: 1%;width: 98%;height: 25em;
+}
+#u-img6 {
+    margin: 1%;width: 98%;height: 25em;
+}
+#item-display-content {
+    width: 100%;margin: 4% 1%;
+}
+.dsad {
+    width: 100%;display: inline-block;
+}
+.strack {
+    float: left;margin: 1%;width: 60%;
+}
+.strack a {
+    text-decoration: none;color: #456784;text-transform: capitalize;font-size:14px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.ownerpx {
+    border-radius: 50%;width:4em;height:4em;float:left;margin: 0 .5em;
+}
+.oname {
+    margin: 1em 0 0 .5em;
+}
+.follow {
+    float: right;margin: 3em 3em 0 0;position:relative;
+}
+.rf {
+    width:500%;position:absolute;bottom:2em;right:-95%;color:#335652;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 11px;display: none;
+}
+.follow:hover .rf{
+    display: block;
+}
+.followme {
+    background:#ece9e9;cursor:pointer;font-style:italic;border:1px solid #c0d3d3;border-radius:3px;padding:.3em;width:auto;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: #5c8445;font-weight:500;
+}
+.dsef {
+    color: #554d4d;
+}
+#p-desc #descrpt {
+    font-weight: 700;color: #5c5b5a;font-size:12px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;text-transform: capitalize;
+}
+#gerd {
+    font-size:12px;margin: 2% 0;font-weight: 700;color: #222345;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.rate.item {
+    margin: 1% 0;
+}
+.rate.item .rate-now {
+    width: 3em;
+}
+.viewrating {
+    font-size:12px;font-weight: 700;color: #3a3a3b;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#alertrate {
+    width: 2.5em;margin: 1% 0 0 0;
+}
+#showrate {
+    width: 50%;
+}
+#show-rate {
+    font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+}
+#remove-rate {
+    float: right;margin: -3em 8em 0 0;color: #768665;
+}
+#broadcast {
+    display: inline-block;margin: 4% auto;
+}
+#getshares {
+    color: #4d4b4c;font-weight:700;font-size:14px;display: inline-block;font-family: 'Courier New', Courier, monospace;
+}
+#shareimg {
+    width: 4em;height: 3.2em;margin: 2% 0 -1.4em 0;
+}
+#getviews {
+    color: #4d4b4c;font-weight:600;font-size:14px;display: inline-block;font-family: 'Courier New', Courier, monospace;
+}
+#viewimg {
+    width: 3em;height: 2.2em;margin: 2% 0 -.8em 4em;
+}
+#p-amount {
+    color:#31362c;font-weight: 700;font-size:22px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;line-height: 20px;
+}
+#p-link form.send-me-to input[type=submit]#link-me-to-url {
+    cursor:pointer;position:relative;background:transparent;border-radius: 4px;color:#9b8686;font-size:14px;font-weight: 700;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;background-color: #e7e8ec;margin: 4% auto;padding: .4em;border: 1px solid #ced7d8;
+}
+#share-exp{
+    display:none;cursor:default;position: fixed;
+    padding:.2em;
+    font-size:13px;z-index: 4;
+    font-weight:700;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    left:15%;top:55%;border-radius:3px;
+    background: #f1f1f1;border: 1px solid #c2bbbb;
+}
+#share-exp a{
+    text-decoration: none;color: #45169b;text-transform: capitalize;
+}
+#share-exp a:hover{
+    color: #9b2616;
+}
+#c-all:hover #share-exp {
+    display: block;
+}
+#c-all #share-exp:after {
+    content:"";position:absolute;left:15%;top:98%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(360deg);
+}
+#c-all #share-exp:before {
+    content:"";position:absolute;left:15%;top:98%; margin-right:0px;border-top:10px solid #c2bbbb;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(360deg);
+}
+#customer-rec {
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;background: #f1f1f1;
+    font-size: 12px;width: 70%;text-align: left;padding: .4em;
+    margin: 2% 0;color: #4c4c50;
+}
+.rec.down {
+    margin: 1% auto;
+}
+.u.details{
+    display: inline-block;margin: 2% auto;width: 15em;
+}
+.u.details .u.picx {
+    display: inline-block;width: 4em;height: 3.8em;border-radius: 3px;
+}
+.u.details .uname {
+    font-size:11px;font-family: cursive; font-weight: 700;color: #505053;text-transform: capitalize;
+}
+.al._rec {
+    display: inline-block;margin: 0em 0 0 1em;
+}
+._recomendation {
+    font-size:12px;font-family: sans-serif; font-weight: 700;color: #30304b;
+}
+._recomendation .rec._des {
+    font-size:12px;font-family: cursive; font-weight: 700;color: #505053;
+}
+.rea.rec {
+    font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: 20px;
+} 
+.rea._des {
+    font-size:12px;font-family: cursive; font-weight: 700;color: #505053;  
+}
+#no-rec {
+    font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 1% auto;
+}
+#load-more-rec {
+    font-size: 12px; font-weight: 700; color: #464145; padding:.3em;width:30%;background: #f1f1f1;margin: 3% 0% 3% 10% ;font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#show-p {
+    position: absolute;background: #ffffff;width: 50%;text-align:center;margin: 2% auto;padding: 1em;top: 0;left:20%;z-index: 90;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;
+}
+.cancelnow {
+    color: #706262;font-size: 12px;float: right;margin: 10% 15% 1% 0;cursor: pointer;font-weight:500;
+}
+#showall {
+    position: relative;
+}
+.see-m {
+    font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 3%;
+}
+.see-more {
+    font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 3%;
+}
+#see-reviews {
+    font-size: 14px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 5%; position:absolute;bottom: 0%;
+}
+.modal {
+    background: #415597;width: 50%;height: inherit;padding: 2%;text-align: center;border-top-right-radius: 4px;border-top-left-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;display: none;position: absolute;bottom: 5em;left:.2em;z-index: 10000;
+}
+.modal-content {
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}.modal-content .copy {
+    text-align: center;padding: 1%;color: #fff;font-size: 11px;font-weight: 700;
+}
+.modal-content .socials {
+    padding: .2em;display: inline-block;cursor: pointer;
+}
+.modal-content .socials a {
+    color: #ffffff;text-decoration: none;
+}
+.modal-content .socials:hover {
+    box-shadow: 0 2px 0 0 #ffffff;
+}
+.modal-content .pasteurl {
+    background:#ffffff;color:#000000;margin:.5em auto;height:auto;padding:.5em;font-size:12px;width:95%;border-top-right-radius: 4px;border-top-left-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;
+}
+#cancelnow {
+    color: #fff;font-size: 18px;float: right;margin: 0 15% 1% 0;cursor: pointer;
+}
+.ads-placement {
+    text-align: center;position:relative;
+}
+.ads-placement form.send-me-to input[type=submit].take-me-to-ad-url {
+    color: #1756dd;font-style: italic;font-size: 14px;width: 100%;padding: .5em;
+}
+.ads-placement .remov-ad {
+    position: absolute;top: 8%;right: 30%;color: #838286;font-size:14px;z-index: 1;
+}
+.ads-placement img.take-me-to-ad-url {
+    margin:2% auto;height: 25em;width: 30em;position:relative;
+}
+.ads-placement .remov-ad .etan-ad {
+    background: transparent;display: none;right:2%;margin-top:2%;font-weight: 500;color: #fdfbfb;font-size: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.ads-placement .remov-ad .hut-ad {
+    font-size: 14px;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;background: #f1f1f1;
+}
+.ads-placement .remov-ad:hover .etan-ad{
+    display: block;
+}
+.complete._acc {
+    margin: 3% auto;font-weight: 12px;background: #e4e4e9;line-height: 20px;padding: .2em 0.4em .2em .5em; font-family: Arial, Helvetica, sans-serif;width: 98%;color: #414147;border-radius: 2px;
+}
+.my.ref {
+    margin: 3% auto;font-weight: 12px;line-height: 20px;padding: .2em 0 .2em .5em; font-weight: 300;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;width: 98%;color: #5c315e;border-radius: 2px;
+}
+.my.ref a {
+    text-decoration: none;
+}
+.ref._det {
+    margin: 1%;
+}
+.my-parent {
+    position: relative;
+}
+.ref-table {
+    border: 1px solid #d7ecd7;width: 100%;
+}
+tr.one {
+    width: 100%;background: #cdcddf;
+}
+.thead-l {
+    width: 50%;float:left;text-transform: capitalize;color:#555555;font-weight:700;font-size:12px;font-family: sans-serif;margin: 1% 2%;
+}
+.thead-r {
+    width: 50%;text-transform: capitalize;color:#555555;font-weight:700;font-size:12px;font-family: sans-serif;margin: 1% 2%;
+}   
+.refmail{
+    text-transform: capitalize;color:#3f3232;font-weight:700;font-size:11px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin: 1% 2%;
+}
+.refamount {
+    text-transform: capitalize;color:#3f3232;font-weight:700;font-size:11px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;margin: 1% 2%;
+}
+.total.refamount {
+    text-transform: capitalize;color:#074e2e;font-weight:700;font-size:14px;font-family:cursive;margin: 1% 2%;  
+}
+.refcount {
+    text-transform: capitalize;color:#074e2e;font-weight:700;font-size:14px;font-family:cursive;margin: 1% 2%;    
+}
+.no.referrals {
+    margin: 2% 1%;font-weight: 700;padding:.3em;font-size: 12px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #323235;background: #c5dadd;
+}
+.show.profiledetail {
+    width: 75%;margin: 2% auto 3% 10%;background: transparent;border-radius:10%;height: 14em;text-align: center;float: left;
+}
+.show.profiledetail .udetails img#profile_pics {
+    width:60%;height: 7em;border-radius: 50%;margin: 8% 0 0 0;
+}
+.show.profiledetail img#selectfile {
+    width: 2em;margin: -2em 0 1em 0;
+}
+._users._details {
+    text-align: left;text-transform:capitalize;font-size: 12px;font-weight:500;color:#f0f3f0;margin: -1em 1% 0.2em .2em;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+._reter.uio {
+    text-align: left;margin: .8em 1% 0.2em 1em;font-size: 12px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+._opers.uio {
+    color: #15d0dd;font-weight: 600;
+}
+.refet {
+    font-size: 12px;margin: 12% 10%;font-weight: 300;color: #ffffff;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.refet a {
+    text-decoration: none;color: #ffffff;
+}
+.my.ad.det {
+    width: 98%;
+}
+.al.my.ads {
+    width: 98%;margin: 2% 1% 2% 0;line-height: 22px;background-color: #f0f0f7;border: 1px solid #dadadd;
+}
+.ad._details {
+    margin: 3% auto;background-color: #e6edf0;padding: .3em .5em;
+}
+.ad.count {
+    font-size: 12px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;font-weight:700;color: #384242;margin: 1%;
+}
+.addet {
+    font-size: 14px;font-family: 'Courier New', Courier, monospace;color: #860466;font-weight: 700;text-transform: capitalize;
+}
+.addeta {
+    font-size: 14px;font-family: 'Courier New', Courier, monospace;color: #860466;font-weight: 700;
+}
+.ad.het {
+    font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;
+}
+.my.adclickdet {
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;font-weight: 700;
+}
+.noclicks{
+    font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;text-transform: capitalize;
+}
+.greta{
+    font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;text-transform: capitalize;
+}
+.ad._reviews{
+    font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;text-transform: capitalize;
+}
+.check._reviews{
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #6c0883;font-weight: 700;
+}
+.ad.charge.details {
+    font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+}
+.mcharge {
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;font-weight: 700;
+}
+.ad._charge.gut {
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #384242;font-weight: 700;
+}
+.c._ad.clicks {
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #5f6464;font-weight: 700;
+}
+.c._ad.pay {
+    font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #232e2e;font-weight: 700;
+}
+.ad._sanctions {
+    font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;margin: 2% 2% 5% 5%;
+}
+.ad._sanctions ol li{
+    list-style: upper-roman;
+}
+.ad._sanctions ol li ol li{
+    list-style: lower-roman;margin: 1% 0 0 4%;
+}
+.ad._sanctions ol li ol li a{
+    text-decoration: none;color: #ee6846;
+}
+.ad._sanctions ol li ol li a:hover{
+    color: #389b19;
+}
+form.cancel.ad.now input[type=submit].cancel.ad {
+    margin-left: -.5em;width:15%;height:2em;outline:none;cursor:pointer;border:none;background:transparent;font-weight: 700;font-size: 12px;color:#c52020;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+}
+._pay._now {
+    font-size: 12px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;line-height: 22px;color: #323235;font-weight: 700;padding: 0 1em;
+}
+.c._ad._charge {
+    margin: 1% 2%;color: #29241f;font-weight: 700;font-size: 12px;
+}
+.suspended.users {
+    width: 99%;margin: 2% 0% 2% 0;line-height: 22px;background-color: #f0f0f7;border: 1px solid #dadadd;
+}
+._sus._ads {
+    margin: 2% 1%;
+}
+.sus._intro {
+    color: #612d2d;font-size: 12px;line-height: 20px;font-weight: 300;font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+}
+.reason.for.sus {
+    font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+}
+.timeofsusp {
+    color: #612d2d;font-size: 12px;line-height: 20px;font-weight: 300;font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+}
+.no.susp {
+    width: 98%;margin: 2% 1% 2% 0;font-size:12px;background-color: #f0f0f7;color:#575979;text-transform:capitalize;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 700;border: 1px solid #ececf1;
+}
+.no.ads.yet {
+    width: 98%;margin: 2% 1% 2% 0;font-size:12px;background-color: #f0f0f7;color:#575979;text-transform:capitalize;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 700;border: 1px solid #ececf1;
+}
+.all._click._det {
+    width: 98%;margin: 2% 1% 2% 0;line-height: 22px;background-color: #f0f0f7;border: 1px solid #dadadd;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 12px;
+}
+.my.rev.deta {
+    padding: .5em;font-size: 12px;color: #414150;background-color: #e2eaf1;font-weight: normal;font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;margin: 3% 2%;
+}
+.rev._uoy {
+    font-weight: 700;font-size: 10px;
+}
+.rev._uop {
+    margin: 3% 2%;font-weight: 700;font-size: 12px;
+}
+ol.arrange._data li {
+    margin: 2% 0 0 5%;
+}
+ol.arrange._data li a {
+    color: #bb2613;text-decoration: none;
+}
+.payment._due {
+    font-size: 12px;font-weight: 700;color: #6e4635;margin: 2% 2%;background: #dddde0;padding: .5em;
+}
+.no.clicks.found {
+    width: 98%;margin: 2% 1% 2% 0;padding:0 .5em;line-height: 22px;background-color: #f0f0f7;border: 1px solid #dadadd;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 11px;font-weight: 700;color: #515169;text-transform: capitalize;
+}
+.my.payment.data {
+    border: 1px solid #dadadd;width: 98%;padding: 0em;font-size: 12px;color: #414150;background-color: #edf0f3;font-weight: normal;font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;margin: 3% 0%;
+}
+.pop.images {
+    width: 98%;margin: 2%;
+}
+.pop.images img.pop.imgs {
+    width: 80%;height: 20em;margin: 0% 8%;
+}
+.each.pop.images {
+    width: 98%;margin: 2% 8%;
+}
+.each.pop.images img.each.pop.imgs {
+    width: 10%;height: initial;margin: 1% 2%;float: left;
+}
+form.acknowledge.now input[type=submit].knowledgenow {
+    width:15%;height:2em;outline:none;cursor:pointer;border:none;background:transparent;font-weight: 700;font-size: 12px;color:#80188a;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+}
+ol.ack.notice li {
+    list-style: lower-roman;margin: 1% 0 0 5%;
+}
+ol.ack.notice li a {
+    text-decoration: none;color: #0000ff;
+}
+#showall {
+    position: relative;
+}
+#see-reviews {
+    font-size: 14px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 5%; position: relative;bottom: 0%;
+}
+#read-me {
+    width: 98%;margin: .5% auto 10% auto;border: 1px solid #ddd4cd;
+}
+.grad {
+    float:left;
+    width:23.9%;
+    height:19em;
+    background: #f1f1f1;
+    padding: 0;
+    margin: .4em;
+    position:relative;
+}
+.remove-ad {
+    position: absolute;top: 3%;right: 3%;color: #b1afb6;font-size:10px;background: transparent;border-radius: 3px;
+}
+.remove-ad .etan-ad {
+    background: transparent;display: block;right:2%;margin-top:3%;color: #f0f0f5;font-weight:700;padding: .3em;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.remove-ad .hut-ad {
+    font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+}
+#mainimgs {
+    width:100%;
+    height: 12em;
+    border-radius: 3px;
+}
+._atal {
+    margin-left: 2%;text-align: left;
+}
+.find.more {
+    display:none;cursor:default;
+}
+.find.more a {
+    text-decoration: none;
+}
+.find.more a:hover {
+    color: #008000;
+}
+.grad:hover {
+    background: #e4e1e1;
+    opacity: 1;
+}
+.grad:hover .find.more {
+    display: block;
+    position: absolute;
+    padding:.2em;
+    font-size:12px;
+    font-weight:700;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    right:15%;bottom:10%;border-radius:3px;border: 1px solid #bdbaba;
+    background: #f1f1f1;
+}
+.grad .find.more:after {
+    content:"";position:absolute;left:15%;bottom:90%; margin-right:0px;border-top:9px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:9px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+.grad .find.more:before {
+    content:"";position:absolute;left:15.7%;bottom:90%; margin-right:0px;border-top:12px solid #bdbaba;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:12px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+.imgs.display {
+    background: #f1efef;
+}
+.p-link {
+    text-align: center;position: relative;
+}
+.p-link:hover .show-website{
+    display: block;
+}
+.show-website {
+    color: #535151;position: absolute;bottom: 65%;display: none;z-index: 9000;font-weight: 300;left:0;right: 0;font-size: 11px;
+}
+form.send-me-to input[type=submit].link-me-to-url {
+    text-decoration: none;color:#585757;font-size:15px;text-transform: capitalize;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 500;font-stretch: normal;background: transparent;border: none;cursor: pointer;
+}
+form.send-me-to input[type=submit].take-me-to-ad-url {
+    text-decoration: none;color:#585757;font-size:15px;text-transform: capitalize;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 500;font-stretch: normal;background: transparent;border: none;cursor: pointer;
+}
+.p-title {
+    margin: 0;
+}
+.p-title a {
+    text-decoration: none;color:#585757;font-size:15px;text-transform: capitalize;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 500;font-stretch: normal;
+}
+.weblink {
+    font-size: 11px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-style: italic;font-stretch: condensed;color:#2b3d4e;
+}
+.web {
+    font-style: normal;color:#1756dd;
+}
+.p-title:hover .full.title {
+    display:block;
+}
+.full.title {
+    color:#444040;display:none;position:absolute;text-transform: capitalize;font-size:10px;font-family:arial;bottom:32%;background:transparent;width:200%;z-index: 900;font-weight: 600;
+}
+.p-price {
+    margin:.2em .5em 0 0;font-weight: 700;font-size:15px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: #222345;
+}
+.p-views {
+    width:90%;margin: auto;
+}
+.p-views .views.img {
+    width: 1.5em;height: 2em;margin: 0em .2em -.7em -.8em;display: inline-block;
+}
+.p-views .views.count {
+    display: inline-block;margin: -1em 0 0 0em; font-weight: 700;font-size:14px;font-family: 'Courier New', Courier, monospace;color: #222345;
+}
+.p-rec {
+    font-weight:700;font-size:12px;font-family:cursive;color:#5d6061;
+}
+.rea.reca {
+    font-size:11px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: normal;padding:1%;
+}
+#container {border: 1px solid #ccc;width:50%;margin:auto;left:0;right:0;height: inherit;padding: 0;text-align: center;border-radius: 3px;z-index: 16;position: absolute;top: 2%;background: #f5f4f4;}
+#edit-intro{
+    color:#008000;margin:1em auto;font-size: 13px;font-weight: 700;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 1%;
+}
+#closereg {
+    float: right;margin: 0em 2em .4em 0;font-size: 20px;color: #888;padding: .3em;cursor: pointer;
+}
+#closereg1 {
+    float: right;margin: 0em 2em .4em 0;font-size: 20px;color: #888;padding: .3em;cursor: pointer;
+}
+#profile-edit-error {
+    font-size: 14px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;background: #f15d78;color: #f7f3f3;width: 50%;margin:2% auto;height: 2em;border-radius: 2px;text-align: center;padding: .5%;
+}
+.edit.profile.form {
+    height:inherit;margin: 0 0 1em 0;
+}
+.edit.profile.form form{
+    width:90%;text-align:center;margin:auto;margin-bottom:20px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.edit.profile.form form .form-group{
+    padding: 2%;margin: 5% 0 0% 4em;position: relative;
+}
+.edit.profile.form form .form-group:hover .url.info{
+    display: block;
+}
+.edit.profile.form form .form-group label {
+    font-size: 10px;font-weight:500;color:#555;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-right: 7em;
+}
+.edit.profile.form form .form-group label#name{
+    float:left;margin-left:-3em;margin-top:-1em;background: transparent;font-size: 14px;
+}
+.edit.profile.form form .form-group input[type=varchar]#namechk{
+    width:85%;height:35px;outline:none;border:1px solid #dddada;background:#eaeaea;margin-right: 8%;float: right;margin-top:-2em;font-size: 12px;
+}
+#nameStatus {
+    text-align:left;font-size:12px;margin-left:10em;
+}
+.edit.profile.form form .form-group label#phone{
+    float:left;margin-left:-3em;margin-top:.5em;background: transparent;font-size: 14px;
+}
+.arr.phone {
+    float:right;width: 60%;margin: -2em 8% 0em 0;
+}
+.edit.profile.form form .form-group input[type=varchar]#phonechk{
+    width:80%;height:35px;outline:none;border:1px solid #dddada;background:#eaeaea;margin-left: 1%;font-size: 12px;float: right;
+}
+#allpasswordStatus {
+    text-align:left;font-size:12px;margin-left:12em;
+}
+.phone.no {
+    background: #aaa8a8; width: 10%; height: 15px;font-weight: 700;padding: 11px;color: #58585e;float: left;
+}
+#user-type {
+    width:75%;height:35px;outline:none;border:1px solid #f1f1f1;background:#eaeaea;margin-right: 8%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+}
+.clear.float {
+    clear: right;
+}
+.stopit {
+    clear: left;
+}
+.edit.profile.form form .form-group input[type=submit].submit.btn {
+    cursor:pointer;border:none;color:#800;background:transparent;height:30px;width:150px;font-weight:700;margin: 0em auto;font-size: 15px;text-align: center;
+}
+#submitaccdet {
+    position:absolute;border: 1px solid #cccccc;width:50%;margin:auto;left:0;right:0;height: inherit;padding: 0;text-align: center;border-radius: 3px;z-index: 1000;;top: 2%;background: #ffffff;
+}
+#closereg2 {
+    float: right;margin: 0em 2em .4em 0;font-size: 20px;color: #888;padding: .3em;cursor: pointer;
+}
+.accintro {
+    margin:0 auto 2em auto;font-size: 14px;font-weight: 500;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center;
+}
+.oloro {
+    width: 90%;text-align:center;margin:2% auto;font-size: 13px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;
+}
+form.accerta {
+    margin: 3% auto;
+}
+form.accerta .form-group {
+    padding: 1%;margin: 2% auto 1% 0;position:relative;text-align:left;
+} 
+.url.info {
+    position: absolute;width: 50%;top: 10%;display: none;z-index: 9;background: #f1f1f1;border: 1px solid #b9bec4;padding: 1%;margin: 2em 1%;border-radius: 3px;
+}
+.url.info:after {
+    content:"";position:absolute;left:15%;bottom:100%; margin-right:0px;border-top:10px solid #f1f1f1;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:8px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+.url.info:before {
+    content:"";position:absolute;left:15%;bottom:100%; margin-right:0px;border-top:10px solid #b9bec4;border-left:10px solid transparent;border-right:10px solid transparent;border-top-width:10px;border-bottom:10px solid transparent;transform: rotate(180deg);
+}
+form.accerta .form-group:hover .url.info{
+    display: block;
+}
+form.accerta .form-group label {
+    float:left;text-align:left;margin: 0 0 0 1em;font-size: 14px;color:#4b5353;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+form.accerta .form-group input[type=varchar].form-control {
+    width:45%;height:35px;outline:none;border:1px solid #dfdada;background:#f5f4f4;margin-right: 4%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+}
+.dety {
+    font-weight:500;color: #4d4848;margin: 4% 0 1% auto;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.pop-p-images {
+    display:inline-block;background: transparent;width: 100%;
+}
+.pop-p-images .pop-images {
+    width:6em;height:5em;display:inline-block;margin:.3em 5%;border: 1px solid #cccccc;border-radius: 5px;
+}
+.pop-p-images .pop-images .ad.gio {
+    width:100%;height:100%;z-index:9;position:relative;
+}
+.pop-p-images .pop-images .ad.gio .click.button {
+    z-index: 90000;float: left;
+}
+img.backo.img{
+    width:100%;height:100%;position: relative;
+}
+.fa-upload {
+    color: #988999;float: right;margin: 0 0.5em .2em 0;z-index: 900; 
+}
+form.accerta .form-group input[type=submit].submit.btn {
+    cursor:pointer;border:none;color:#64646e;background:transparent;height:20px;font-weight:700;margin: -1em auto 1em auto;text-align:center;padding-right: 1em;font-size: 14px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;width:100%;
+}
+#review-item {
+    width: 80%;
+}
+#show-p {
+    width:50%;display: none;position: absolute;background: #ffffff;z-index: 2000;height: 15em;color: #788888;top: 0%;left: 25%;border-radius: 3px;
+}
+#_ret {
+    margin: 13% 1% 0 1%;width: 96%;
+}
+#used-item {
+    width:55%;float: left;font-size: 14px;font-weight: 700;font-family: 'Courier New', Courier, monospace;margin: 0 0 0 4%;
+}
+#have_used_item {
+    background: #e0dede;color: #788888;border: 1px solid #cdd3d3;width: 40%;
+}
+#used {
+    display: none;margin: 2% 0 0 5%;font-size: 12px;text-transform:capitalize;font-weight: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #646864;
+}
+#duration-of-use {
+    width: 60%;font-family:'Courier New', Courier, monospace;display: none;position: absolute;background: #ffffff;z-index: 10000;height: inherit;color: #788888;top: 0;left: 20%;border-radius: 3px;text-align:left;
+}
+#i-rev {
+    font-weight:700;font-family: Verdana, Geneva, Tahoma, sans-serif;margin: 5% auto;color: #849b9b;font-size: 11px;text-align: center;
+}
+#post-rev-contena .form-group {
+    margin: 2% auto;padding: 1% auto;
+}
+#post-rev-contena .form-group label{
+    margin: 2% auto;padding: 1% auto;float:left;font-size:12px;
+}
+#post-rev-contena .form-group label#used-item{
+    margin: 2% auto 0 -5%;padding: 1% auto;float:left;font-size:12px;
+}
+.review._it {
+    text-transform:capitalize; width: 60%;font-size: 14px;font-weight: 500;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;float: left;color: #3a3a3b;margin: 1% auto 0 4%;
+}
+input[type=varchar]#used-period {
+    font-size: 12px;float: right;margin: -2em 3% 2em 2%;width: 40%;color: #222345;background:#e5e5e7;border: 1px solid #b9bac2;height: 20px;
+}
+#recommend-item {
+    background: #e8e8ec;border: 1px solid #cfcdd3;float: right;margin: -2em 3% 2em 2%;width: 30%;
+}
+#reason-for-rec {
+    background: transparent;width: 80%;height: 5em;border: 1px solid #e7e5eb;margin: 2% auto 1% 4%;
+}
+#max-word {
+    font-size: 11px;margin: 0% auto 1% 4%;color: #414242;
+}
+.rateitem img.rated-now {
+    width: 4.5em; height: 3.5em;margin: 2% auto 0 3%;
+}
+#showrated {
+    width: 50%;margin: 2% auto 0 0%;
+}
+#show-rated {
+    color:#3b3f37;font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+}
+.view_rating {
+    margin: 2% auto 0 4%;color:#3b3f37;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+}
+#remove-rated {
+    float: right;margin: -3em 8em 0 0;color: #768665;
+}
+#post-rev-contena {
+    border: 1px solid #e2dfdf;margin: 3%;padding: 1%;
+}
+#dok-er {
+    text-align: center;display:inline-block;width: 40%;
+}
+input[type=submit]#subm-it {
+    font-size: 14px;border:none;border-radius: 3px; margin:1% 2em 0 2em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#c1c1ec;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;
+}
+input[type=submit]#submt {
+    font-size: 14px;border:none;border-radius: 3px; margin:1% 2em 0 2em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#c1c1ec;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: right;
+} 
+.end.float {
+    clear: both;
+}
+#connect-with-us {
+    width: 30%;
+    float: right;
+    padding: 0;
+    margin: 2em 2% 0 0; text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#connect-with-us .connect.intro{
+    padding-bottom: 1%;
+    font-family: tahoma;
+    color: #7debf3;
+    font-size: 11px;
+    text-align: center;    
+}
+
+#connect-with-us .hold-em{
+    cursor: pointer;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+#connect-with-us .hold-em .socials {
+    padding: .2em;display: inline-block;
+}
+#connect-with-us .hold-em .socials a {
+    color: #ffffff;text-decoration: none;
+}
+#connect-with-us .hold-em .socials:hover{
+    box-shadow: 0 2px 0 0 #f1f1f1;
+}
+#legal-policies {
+    float: right;
+    width: 20%;
+    padding: 0;
+    margin: 2em -2em 0 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#legal-policies .legal {
+    padding: 0;
+    color: #7debf3;
+    font-family: verdana;font-size: 11px;font-weight: 600;
+}
+#legal-policies ul {
+    list-style: none;margin: 1em 0 0 0;
+}
+#legal-policies ul li{
+    padding: 1%;
+}
+#legal-policies ul li a{
+    text-decoration: none;color: #ffffff;text-transform: capitalize;font-size:12px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: 00;height: auto;width: auto;margin: 0 0 .5em 0;
+}
+#legal-policies ul li a:hover{
+    color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+}
+#promote-content {
+    float: right;
+    width: 20%;
+    padding: 0;
+    margin: 2em 0 0 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#promote-content .help-me {
+    padding: 0;
+    color: #7debf3;font-weight: 600;
+    font-family: verdana;font-size: 11px;
+}
+#promote-content ul {
+    list-style: none;margin: 1em 0 0 0;
+}
+#promote-content ul li{
+    padding: 1%;
+}
+#promote-content ul li a{
+    text-decoration: none;color: #ffffff;text-transform: capitalize;font-size:12px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: 300;height: auto;width: auto;margin: 0 0 .5em 0;
+}
+#promote-content ul li a:hover{
+    color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+}
+#mymusicbaz-subdomains {
+    float: left;
+    width: 20%;
+    padding: 0;
+    margin: 2em 0 0 2em;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#mymusicbaz-subdomains .mymusicbaz {
+    padding: 0;
+    color: #7debf3;font-weight: 600;margin: 0 0 1em 0;
+    font-family: verdana;font-size: 11px;
+}
+#mymusicbaz-subdomains ul{
+    list-style: none;
+}
+#mymusicbaz-subdomains ul li{
+    padding: 1%;
+}
+#mymusicbaz-subdomains ul li a{
+    text-decoration: none;color: #ffffff;text-transform: capitalize;font-size:12px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: 300;height: auto;width: auto;margin: 0 0 1em 0;
+}
+#mymusicbaz-subdomains ul li a:hover{
+    color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+}
+.end.float {
+    clear: both;
+}
+.loat.end {
+    clear: right;
+}
+#rights-reserved {
+    color: #f5f5f5;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+}
+#go-to-top {
+    float: right;
+    padding: .2%;
+    font-weight: 700;
+    margin-right: 4%; 
+    text-decoration: none;
+    font-size:12px;
+    color: #ffffff;
+}
+footer {
+    margin:0;
+    width:100%;
+    height:230px;
+    background: #3f3f63;
+    position:relative;
+}
+
+
+
+@media screen and (max-width:420px) {
+    header {
+        width: 100%;;
+    }
+    .search {
+        margin: 0em 0 0em 0.1em;
+        width: 40%;
+        height: 40px;
+        float: left;
+    }
+    .search form .form.box {
+        width: 100%;
+    }
+    .search form .form.box input[type=text]#search-input {
+        width:70%;font-size: 10px;
+    }
+    .search form .form.box button#search-result {
+        width:10%;
+    }
+    ul #post-a-review {
+        margin: 1% 2% 0 4%; 
+        height:35px;
+        width: 20%;
+    }
+    ul #post-a-review a {
+        font-size: 10px;
+    }
+    ul #post-a-review #hetn {
+        font-size:10px;
+    }
+    ul #post-a-review #hetan {
+        font-size:10px;
+    }
+    ul #post-a-review #hetsa {
+        font-size:10px;
+    }
+    #heta-info{
+        width:160%;
+    }
+    #het-info{
+        width:160%;
+    }
+    #hets-info{
+        width:160%;
+    }
+    ul .notification {
+        width: 15%;
+        margin: -.3em 1% 0 0;
+    }
+    ul .notification img#notifyme {
+        padding: .3em 0 .5em 0;margin: .5em 1em 0 0;
+    }
+    ul .notification ul#list-notifications {
+        display: none;background: #f1f1f1;margin: 0 0% 0 -12em;width: 15em;position:relative;z-index: 1;height:inherit;
+    }
+    .nav ul li.in {
+        margin: 0em 0em 0em 2%;float:right;
+    }
+     .nav ul li.in a img#profile_pics {
+         width: 35px;
+         height:35px;
+         margin: 0.25em 0 0em 0;
+         border-radius: 3px;
+    }
+    ul li.in .user.act {
+        display: none;
+        position: absolute;
+        width: 500%;
+        background: rgb(219, 212, 212);
+        border-radius: 3px;
+        z-index: 100;
+        margin: -.5em 1em 0 0;
+    }
+    ul li.in .user.act ul li#exupdate{
+        display: block;
+    }
+    ul li.in .user.act ul li#myprofile{
+        display: block;
+    }
+    ul li.in .user.act ul li a{
+        color: #7a196d;
+        font-weight: 700;
+        font-size: 10px;
+    }
+    #show-own-ad ._ser {font-size:11px;padding: .3em 0 .5em .5em; }
+    #show-banner-ads-small {
+        width:100%;height:10em;margin: 0% auto;padding:0 .5%;
+    }
+    #show-banner-ads-small img#img-adset {
+        width:100%;height:10em;
+    }
+    .side.bar {
+        display:none;
+        margin: 0em 0 0 1%;padding: 0;
+        width: 98%;
+        float:none;
+        position: relative;
+    }
+    .main.content {
+        margin: 0em 0 0 0;
+        position: relative;
+        float:none;
+        width: 98%;
+    }
+    .read.me {
+        margin: 0em 0 0 0;
+        position: relative;
+        float:none;
+        width: 98%;
+    }
+    .fa-list.modify {
+        display: block;
+    }
+    #show-own-ad ._ser {font-size:11px;padding: .3em 0 .5em .3em; }
+    #show-banner-ads {
+        width: 80%;
+    }
+    #show-banner-ads #remove-ad {
+        position: absolute;top: 8%;right: 8%;color: #b1afb6;font-size:10px;
+    }
+    #show-banner-ads img#ad-img {
+        margin:2% auto;height: 6em;
+    }
+    #show-banner-ads #remove-ad #etan-ad {
+        background: transparent;display: none;right:2%;margin-top:2%;font-weight: 700;color: #fdfbfb;
+    }
+    #show-banner-ads #remove-ad #hut-ad {
+        font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+    }
+    .see-more {
+        position:relative;font-size: 14px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 3%;padding:.3em;
+    }
+    .show.profiledetail {
+        width: 70%;margin: 2% 15%;background: transparent;border-radius:10%;height: 15em;text-align:center;
+    }
+    #container {width:90%;left:0;right:0;}
+    #profile-edit-error {
+        font-size: 12px; 
+    }
+    .edit.profile.form {
+        height:inherit;margin: 0 0 1em 0;width: 90%;
+    }
+    .edit.profile.form form{
+        width:95%;
+    }
+    .edit.profile.form form{
+        width:95%;
+    }
+    .edit.profile.form form .form-group {
+        padding: 4% 0;
+    }
+    .edit.profile.form form .form-group label#name{
+        font-size: 12px;float:left;margin-left:-4em;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#namechk{
+        width:85%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;
+    }
+    #nameStatus {
+        text-align:left;font-size:12px;margin-left:4em;
+    }
+    .edit.profile.form form .form-group label#phone{
+        float:left;margin-left:-4em;margin-top:.5em;background: transparent;font-size: 12px;
+    }
+    .arr.phone {
+        float:right;width: 60%;margin: -2em 2% 0em 0;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#phonechk{
+        width:80%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin: 0 0 0 -.4em;font-size: 12px;float: right;
+    }
+    #allpasswordStatus {
+        text-align:left;font-size:12px;margin-left:4em;
+    }
+    .phone.no {
+        background: #aaa8a8; width: 15%;margin-left:-2em; height: 15px;font-weight: 700;padding: 8px 18px 8px 8px;color: #58585e;float: left;
+    }
+    #user-type {
+        width:75%;height:30px;outline:none;border:1px solid #f1f1f1;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+    }
+    .clear.float {
+        clear: right;
+    }
+    .stopit {
+        clear: left;
+    }
+    .edit.profile.form form .form-group input[type=submit].submit.btn {
+        cursor:pointer;border:none;color:#800;background:transparent;height:30px;width:150px;font-weight:700;margin: 0em auto;font-size: 15px;text-align: center;
+    }
+    #see-reviews {
+        position:relative;font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 2% 0 1% 5%;padding:.3em;
+    }
+    .p-ad {
+        display:none;
+    }
+    .ref-table {
+        border: 1px solid #d7ecd7;width: 100%;
+    }
+    tr.one {
+        width: 100%;background: #cdcddf;
+    }
+    .thead-l {
+        width: 57%;float:left;text-transform: capitalize;color:#555555;font-weight:700;font-size:11px;font-family: sans-serif;margin: 1% 2%;
+    }
+    .thead-r {
+        width: 43%;text-transform: capitalize;color:#555555;font-weight:700;font-size:11px;font-family: sans-serif;margin: 1% 2%;
+    }
+    .total.refamount {
+        font-size:12px;  
+    }
+    .refcount {
+        font-size:12px;font-family:cursive;margin: 1% 2%;    
+    }
+    .no.referrals {
+        margin: 2% 1%;font-weight: 700;padding:.3em;font-size: 12px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #323235;background: #c5dadd;
+    }
+    .my.ad.det {
+        width: 100%;
+    }
+    .al.my.ads {
+        width: 98%;margin: 2% 0% 2% 1.5%;display: block;
+    }
+    form.cancel.ad.now input[type=submit].cancel.ad {
+        margin-left: 0em;width: 25%;
+    }
+    ._pay._now {
+        font-size: 12px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;line-height: 22px;color: #323235;font-weight: 700;padding: 0 1em;
+    }
+    .c._ad._charge {
+        margin: 1% 2%;color: #29241f;font-weight: 700;font-size: 12px;
+    }
+    .suspended.users {
+        width: 98%;margin: 2% 0% 2% 1.5%;
+    }
+    ._sus._ads {
+        margin: 2% 1%;
+    }
+    .sus._intro {
+        color: #612d2d;font-size: 12px;line-height: 20px;font-weight: 300;font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+    }
+    .reason.for.sus {
+        font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+    }
+    .timeofsusp {
+        color: #612d2d;font-size: 12px;line-height: 20px;font-weight: 300;font-size: 12px;font-family:Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;color: #323235;
+    }
+    .no.susp {
+        width: 98%;margin: 2% 0% 2% 1.5%;font-size:12px;background-color: #f0f0f7;color:#575979;text-transform:capitalize;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 700;border: 1px solid #ececf1;
+    }
+    .no.ads.yet {
+        width: 98%;margin: 2% 1% 2% 0;font-size:12px;background-color: #f0f0f7;color:#575979;text-transform:capitalize;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 700;border: 1px solid #ececf1;
+    }
+    .all._click._det {
+        width: 98%;margin: 2% 0% 2% 1.5%;line-height: 22px;background-color: #f0f0f7;border: 1px solid #dadadd;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 12px;
+    }
+    .my.payment.data {
+        border: 1px solid #dadadd;width: 98%;padding: 0em;font-size: 12px;color: #414150;background-color: #edf0f3;font-weight: normal;font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 22px;margin: 3% 0% 3% 1.5%;
+    }
+    #c-all {
+        width: 100%;margin: 2% 0 2% .1em;position: relative;float: none;background: #ffffff;
+    }
+    #imgcot {
+        background: #969696;width: 100%;margin: 2% auto; 
+    }
+    #imgshow {
+        width: 100%;height: 20em;margin: 0 auto;border-radius: 3px;
+    }
+    #u-title {
+        font-size: 13px;
+    }
+    .u-post {
+        line-height: 18px;font-size: 13px;
+    }
+    #u-img1 {
+        margin: 1%;width: 70%;height: 16em;
+    }
+    #u-img2 {
+        margin: 1%;width: 98%;height: 23em;
+    }
+    #u-img3 {
+        margin: 1%;width: 80%;height: 21em;
+    }
+    #u-img4 {
+        margin: 1%;width: 70%;height:18em;
+    }
+    #u-img5 {
+        margin: 1%;width: 98%;height: 23em;
+    }
+    #u-img6 {
+        margin: 1%;width: 98%;height: 23em;
+    }
+    #item-display-content {
+        width: 100%;margin: 4% auto 4% .1em;
+    }
+    .strack {
+        margin: 1%;width: 100%;
+    }
+    .strack a {
+        font-size:12px;
+    }
+    .follow {
+        margin: 2em 2em 0 0;position:relative;
+    }
+    .followme {
+        font-size:13px;
+    }
+    .dsef {
+        font-size:13px;
+    }
+    #p-amount {
+        font-size:20px;margin: 2% 0;
+    }
+    #p-link form.send-me-to input[type=submit]#link-me-to-url {
+        font-size:13px;font-weight: 700;margin: 5% auto;
+    }
+    #share-exp{
+        display:none;cursor:default;position: fixed;
+        padding:.2em;
+        font-size:11px;
+        font-weight:700;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        left:5%;top:55%;border-radius:3px;
+        background: #f1f1f1;
+    }
+    #customer-rec {
+        width: 90%; margin: 2% auto;
+    }
+    .rec.down {
+        margin: 1% auto;display: inline-block;
+    }
+    .u.details{
+        margin: 2% auto;display: inline-block;width: 30%;
+    }
+    .u.details .u.picx {
+        display: inline-block;width: 3em;height: 3em;border-radius: 3px;
+    }
+    .u.details .uname {
+        font-size:10px;font-family: cursive; font-weight: 700;color: #505053;text-transform: capitalize;
+    }
+    .al._rec {
+        margin: 0.5em .2em 2em;display: inline-block;width: 60%;
+    }
+    ._recomendation {
+        font-size:11px;font-family: sans-serif; font-weight: 700;color: #30304b;
+    }
+    ._recomendation .rec._des {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;
+    }
+    .rea.rec {
+        font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: 15px;
+    } 
+    .rea._des {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;  
+    }
+    #no-rec {
+        font-size: 11px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 1% auto;text-align: center;
+    }
+    #load-more-rec {
+        font-size: 11px; width: 100%;margin: 0 auto; text-align: center;
+    }
+    .modal {
+        width: 90%;
+    }
+    .grad {
+        width:100%;
+        height:23em;
+        padding: .1em;
+        margin: 0.1em;
+        position:relative;
+    }
+    img#mainimgs {
+        width:100%;
+        height: 16em;
+        border-radius: 3px;
+    }
+    .p-link {
+        text-align: center;position: relative;
+    }
+    .p-link:hover .show-website{
+        display: block;
+    }
+    .p-title {
+        margin: .5em 0 0 0;font-weight:700;font-family:arial;font-size: 12px;
+    }
+    .p-title a {
+        text-decoration: none;color:#585757;font-size:14px;text-transform: capitalize;
+    }
+    .rea.rec {
+        font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b;
+    } 
+    .p-title:hover .full.title {
+        display:block;
+    }
+    .full.title {
+        display:none;position:absolute;text-transform: capitalize;font-size:11px;font-family:arial;bottom:30.8%;background:transparent;width:200%;z-index: 900;
+    }
+    .p-link {
+        text-align: center;
+    }
+    form.send-me-to input[type=submit].link-me-to-url {
+        position:relative;background:transparent;border:none;color:#585757;font-size:14px;
+    }
+    #show-banner-ads-small {
+        height:12em;
+    }
+    #show-banner-ads-small img#img-adset {
+        height:12em;margin: 0 0 1em 0;
+    }
+    .def.update img.list-image {
+        width: 8em;height:7em;float:left;padding:.5%;border-radius: 8px;margin: .4em .4em .4em 0em;
+    }
+    .litas {
+        width: 30em;padding:8.5em 0 0 0;font-size:11px;font-weight: 700;margin: 0em 0 0 0;text-decoration: none;color:#555557;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;text-transform: capitalize;
+    }
+    #read-me {
+        width: 98%;margin: 2% 0 2% 1.5%;
+    }
+    #load-next {
+        text-align: center;margin: 4% auto;cursor:default;font-size: 13px;font-weight: 700;text-transform:capitalize;color: #676b67;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;background: #d1cfcc;padding: .5em;
+    }
+    #submitaccdet {
+        width:96%;
+    }
+    #closereg2 {
+        font-size: 14px;
+    }
+    .oloro {
+        margin:3% auto;font-size: 12px;
+    }
+    form.accerta {
+        margin: 3% auto;
+    }
+    form.accerta .form-group {
+        padding: 1.5%;margin: 2% auto 3% 0;
+    } 
+    .url.info {
+        width: 80%;
+    }
+    form.accerta .form-group:hover .url.info{
+        display: block;
+    }
+    form.accerta .form-group label {
+        margin: 0 0 0 .4em;font-size: 12px;
+    }
+    form.accerta .form-group input[type=varchar].form-control {
+        width:45%;height:25px;margin-right: 2%;
+    }
+    form.accerta .form-group input[type=submit].submit.btn {
+        height:20px;font-size: 12px;
+    }
+    #review-item {
+        width: 96%;
+    }
+    #show-p {
+        width:70%;display: none;position: absolute;background: #ffffff;z-index: 2000;height: 10em;color: #788888;top: 0%;left: 13%;border-radius: 3px;
+    }
+    #_ret {
+        margin: 13% 1% 0 1%;width: 96%;
+    }
+    #used-item {
+        width:90%;font-size: 12px;font-weight: 700;font-family: 'Courier New', Courier, monospace;margin: 0 0 0 4%;
+    }
+    #have_used_item {
+        background: #e0dede;color: #788888;border: 1px solid #cdd3d3;width: 90%;
+    }
+    #used {
+        display: none;margin: 2% 0 0 5%;font-size: 12px;text-transform:capitalize;font-weight: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #646864;
+    }
+    #duration-of-use {
+        width: 80%;font-family:'Courier New', Courier, monospace;display: none;position: absolute;background: #ffffff;z-index: 90;height: inherit;color: #788888;top: 0;left: 10%;border-radius: 3px;text-align:center;
+    }
+    #i-rev {
+        font-weight:700;font-family: Verdana, Geneva, Tahoma, sans-serif;margin: 5% auto;color: #849b9b;font-size: 11px;text-align: center;
+    }
+    #post-rev-contena .form-group {
+        margin: 1% auto;padding: .3% auto;text-align:left;
+    }
+    #post-rev-contena .form-group label{
+        text-align:left;margin: 0 auto;padding: 1% auto;float:left;font-size:12px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #post-rev-contena .form-group label#used-item{
+        margin: 0 auto 0 -5%;padding: 1% auto;float:left;font-size:12px;text-align:left;
+    }
+    .review._it {
+        text-transform:capitalize; width: 60%;font-size: 12px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;color: #3a3a3b;margin: 1% auto 0 4%;text-align:left;
+    }
+    input[type=varchar]#used-period {
+        font-size: 12px;float: right;margin: -2em 3% 2em 2%;width: 40%;color: #222345;background:#e5e5e7;border: 1px solid #b9bac2;height: 20px;
+    }
+    #recommend-item {
+        background: #e8e8ec;border: 1px solid #cfcdd3;float: right;margin: -2em 3% 2em 2%;width: 30%;
+    }
+    #reason-for-rec {
+        background: transparent;width: 90%;height: 5em;border: 1px solid #e7e5eb;margin: 2% auto 1% 5%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:11px;
+    }
+    #max-word {
+        font-size: 11px;margin: 0% auto 1% 4%;color: #414242;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .rateitem img.rated-now {
+        width: 3em; height: 2.5em;margin: 2% auto 0 1%;
+    }
+    #showrated {
+        width: 50%;margin: 2% auto 0 0%;
+    }
+    #show-rated {
+        color:#3b3f37;font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 11px;text-transform: capitalize;
+    }
+    .view_rating {
+        margin: 2% auto 0 4%;color:#3b3f37;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 11px;text-transform: capitalize;
+    }
+    #remove-rated {
+        float: right;margin: -3em 0 0 0;color: #768665;
+    }
+    #post-rev-contena {
+        border: 1px solid #e2dfdf;margin: 3%;padding: 1%;
+    }
+    #dok-er {
+        text-align: center;display:inline-block;
+    }
+    input[type=submit]#subm-it {
+        font-size: 12px;border:none;border-radius: 3px; margin:1% 0;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;
+    }
+    input[type=submit]#submt {
+        font-size: 12px;border:none;border-radius: 3px; margin:1% 0;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: right;
+    }
+    .pop-p-images .pop-images {
+        width:3em;height:3em;
+    }
+    .pop-p-images .pop-images .ad.gio {
+        width:2em;height:2em;
+    }
+    img#imgclick6 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick7 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick8 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    #connect-with-us {
+        width: 35%;
+        float: right;
+        padding: 0;
+        margin: 2em 0 0 0; text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #connect-with-us .connect.intro{
+        padding-bottom: 1%;
+        font-family: tahoma;
+        color: #7debf3;
+        font-size: 11px;
+        text-align: center;    
+    }
+    
+    #connect-with-us .hold-em{
+        cursor: pointer;
+        display: inline-block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    #connect-with-us .hold-em .socials {
+        padding: 0;display: inline-block;
+    }
+    #connect-with-us .hold-em .socials a {
+        color: #ffffff;text-decoration: none;
+    }
+    #connect-with-us .hold-em .socials:hover{
+        box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #legal-policies {
+        margin: 2em 0 0 0;
+    }
+    #legal-policies .legal {
+        font-size: 10px;
+    }
+    #legal-policies ul {
+        list-style: none;margin: 1em 0 0 0;
+    }
+    #legal-policies ul li{
+        padding: 1%;
+    }
+    #legal-policies ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #legal-policies ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #promote-content {
+        margin: 2em 0 0 0;
+    }
+    #promote-content .help-me {
+        font-size: 10px;
+    }
+    #promote-content ul {
+        margin: 1em 0 0 0;
+    }
+    #promote-content ul li{
+        padding: 1%;
+    }
+    #promote-content ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #promote-content ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #mymusicbaz-subdomains {
+        margin: 2em 0 0 .3em; 
+    }
+    #mymusicbaz-subdomains .mymusicbaz {
+        font-size: 10px;
+    }
+    #mymusicbaz-subdomains ul li a{
+        font-size:11px;
+    }
+    .end.float {
+        clear: both;
+    }
+    .loat.end {
+        clear: right;
+    }
+    #rights-reserved {
+        margin: 3em 0 0 0;
+        color: #f5f5f5;
+        font-style: italic;
+        text-align: center;
+        font-size: 12px;
+    }
+    #go-to-top {
+        float: right;
+        padding: .2%;
+        font-weight: 700;
+        margin-right: 4%; 
+        text-decoration: none;
+        font-size:12px;
+        color: #ffffff;
+    }
+    footer {
+        height:200px;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 420px) and (max-width:560px) {
+    .search {
+        margin: 0em 0 0em 1em;
+        width: 35%;
+        height: 40px;
+        float: left;
+    }
+    .search form .form.box {
+        width: 100%;
+    }
+    .search form .form.box input[type=text]#search-input {
+        width:80%;
+    }
+    .search form .form.box button#search-result {
+        width:5%;
+    }
+    ul #post-a-review {
+        margin: 0% 2% 0 2%; 
+        height:38px;
+        width: 20%;
+        font-size:11px;
+    }    
+    ul #post-a-review a {
+        font-size: 10px;
+    }
+    ul #post-a-review #hetn {
+        font-size:10px;
+    }
+    ul #post-a-review #hetan {
+        font-size:10px;
+    }
+    ul #post-a-review #hetsa {
+        font-size:10px;
+    }
+    #heta-info{
+        width:140%;
+    }
+    #het-info{
+        width:140%;
+    }
+    #hets-info{
+        width:140%;
+    }
+    ul .notification {
+        width: 10%;
+        margin: -.3em 1% 0 0;
+    }
+    ul .notification ul#list-notifications {
+        display: none;background: #d3d1d1;margin: 0 1% 0 -13em;width: 18em;position:relative;z-index: 1;height:inherit;
+    }
+    .nav ul li.in {
+        margin: 0em 1% 0em 5%;
+    }
+     .nav ul li.in a img#profile_pics {
+         width: 40px;
+         height:35px;
+         margin: 0.25em 0 0em 0;
+         border-radius: 3px;
+    }
+    #show-banner-ads-small {
+        width:100%;height:10em;margin: 0% auto;padding:0 .5%;
+    }
+    #show-banner-ads-small img#img-adset {
+        width:100%;height:10em;
+    }
+    .show.profiledetail {
+        width: 90%;margin: 2% 2% 3% 2%;background: transparent;border-radius:10%;height: 14em;text-align: center;float: left;
+    }
+    .show.profiledetail .udetails img#profile_pics {
+        width:60%;height: 7em;border-radius: 50%;margin: 8% 0 0 0;
+    }
+    .side.bar {
+        width:40%;float: left;
+    }
+    #see-reviews {
+        font-size: 12px;margin-left: 1em;padding-left: 1em; 
+    }
+    .main.content {
+        margin: 2em 0 3em 41%;
+        width: 58%;
+    }
+    #show-own-ad ._ser {font-size:11px;padding: .3em 0 .5em .5em; }
+    #show-banner-ads #remove-ad {
+        position: absolute;top: 8%;right: 6%;color: #b1afb6;font-size:10px;
+    }
+    #show-banner-ads img#ad-img {
+        margin:2% auto;height: 6em;
+    }
+    #show-banner-ads #remove-ad #etan-ad {
+        background: transparent;display: none;right:2%;margin-top:3%;font-weight: 700;color: #fdfbfb;
+    }
+    #show-banner-ads #remove-ad #hut-ad {
+        font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+    }
+    #container {width:90%;}
+    #profile-edit-error {
+        font-size: 12px; 
+    }
+    .edit.profile.form {
+        height:inherit;margin: 0 0 1em 0;width: 90%;
+    }
+    .edit.profile.form form{
+        width:95%;
+    }
+    .edit.profile.form form .form-group {
+        padding: 4%;
+    }
+    .edit.profile.form form .form-group label#name{
+        font-size: 12px;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#namechk{
+        width:85%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;
+    }
+    #nameStatus {
+        text-align:left;font-size:12px;margin-left:10em;
+    }
+    .edit.profile.form form .form-group label#phone{
+        float:left;margin-left:-3em;margin-top:.5em;background: transparent;font-size: 12px;
+    }
+    .arr.phone {
+        float:right;width: 60%;margin: -2em 2% 0em 0;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#phonechk{
+        width:80%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin: 0 0 0 -.4em;font-size: 12px;float: right;
+    }
+    #allpasswordStatus {
+        text-align:left;font-size:12px;margin-left:12em;
+    }
+    .phone.no {
+        background: #aaa8a8; width: 13%;margin-left:-2em; height: 15px;font-weight: 700;padding: 8px 8px 8px 8px;color: #58585e;float: left;
+    }
+    #user-type {
+        width:75%;height:30px;outline:none;border:1px solid #f1f1f1;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+    }
+    .clear.float {
+        clear: right;
+    }
+    .stopit {
+        clear: left;
+    }
+    .edit.profile.form form .form-group input[type=submit].submit.btn {
+        cursor:pointer;border:none;color:#800;background:transparent;height:30px;width:150px;font-weight:700;margin: 0em auto;font-size: 15px;text-align: center;
+    }
+    .total.refamount {
+        font-size:12px;
+    }
+    .refcount {
+        font-size:12px;
+    }
+    form.cancel.ad.now input[type=submit].cancel.ad {
+        margin-left: 0em;width:25%;cursor:pointer;
+    }
+    #u-title {
+        font-size:13px;
+    }
+    #u-img1 {
+        width: 70%;
+    }
+    #u-img4 {
+        width: 70%;
+    }
+    .grad {
+        float:left;
+        width:94%;
+        height:18.5em;
+        padding: .1em;
+        margin: .4em;
+    }
+    .itemimgs {
+        display:inline-block;width:.5em;height:.4em;margin:0.3em 0 0 1em;border:1px solid #444;border-radius:50%;
+    }
+    img#mainimgs {
+        width:100%;
+        height: 12em;
+        border-radius: 3px;
+    }
+    .p-title {
+        margin: 0em 0 -0.3em 0;font-weight:700;font-family:arial;
+    }
+    .p-title a {
+        text-decoration: none;color:#585757;font-size:13px;text-transform: capitalize;
+    }
+    form.send-me-to input[type=submit].link-me-to-url {
+        text-decoration: none;color:#585757;font-size:13px;text-transform: capitalize;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 500;font-stretch: normal;background: transparent;border: none;cursor: pointer;
+    }
+    .rea.reca {
+        font-size:11px;font-family: sans-serif; font-weight: 300;color: #a34242; padding: .3em;
+    }
+    .full.title {
+        bottom:31%;
+    }
+    #p-amount {
+        font-size:20px;margin: 2% 0;
+    }
+    #p-link form.send-me-to input[type=submit]#link-me-to-url {
+        font-size:13px;font-weight: 700;margin: 5% auto;
+    }
+    #c-all {
+        width: 98%;margin: 2% auto;position: relative;
+    }
+    #imgcot {
+        background: #969696;width: 100%;margin: auto; 
+    }
+    img#imgshow {
+        width: 100%;height: 20em;margin: 0;border-radius: 3px;
+    }
+    .strack {
+        margin: 1%;width: 100%;
+    }
+    .strack a {
+        font-size:12px;
+    }
+    .follow {
+        margin: 2em 2em 0 0;position:relative;
+    }
+    .followme {
+        font-size:13px;
+    }
+    .dsef {
+        font-size:13px;
+    }
+    #share-exp{
+        font-size:12px;
+        left:40%;top:55%;border-radius:3px;
+        background: #f1f1f1;width: 58%;
+    }
+    .modal {
+        width: 90%;
+    }
+    #customer-rec {
+        width: 90%;
+    }
+    .rec.down {
+        margin: 1% auto;display: inline-block;
+    }
+    .u.details{
+        margin: 2% auto;display: inline-block;width: 30%;
+    }
+    .u.details .u.picx {
+        display: inline-block;width: 3em;height: 3em;border-radius: 3px;
+    }
+    .u.details .uname {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;text-transform: capitalize;
+    }
+    .al._rec {
+        margin: 0.5em .2em 2em;display: inline-block;width: 60%;
+    }
+    ._recomendation {
+        font-size:11px;font-family: sans-serif; font-weight: 700;color: #30304b;
+    }
+    ._recomendation .rec._des {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;
+    }
+    .rea.rec {
+        font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: 20px;
+    } 
+    .rea._des {
+        font-size:12px;font-family: cursive; font-weight: 700;color: #505053;  
+    }
+    #no-rec {
+        font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 1% auto;
+    }
+    #load-more-rec {
+        font-size: 11px; 
+    }
+    #submitaccdet {
+        width:90%;
+    }
+    #closereg2 {
+        font-size: 14px;
+    }
+    .oloro {
+        margin:3% auto;font-size: 12px;
+    }
+    form.accerta {
+        margin: 3% auto;
+    }
+    form.accerta .form-group {
+        padding: 1%;margin: 2% auto 2% 0;
+    } 
+    .url.info {
+        width: 80%;
+    }
+    form.accerta .form-group:hover .url.info{
+        display: block;
+    }
+    form.accerta .form-group label {
+        margin: 0 0 0 .4em;font-size: 13px;
+    }
+    form.accerta .form-group input[type=varchar].form-control {
+        width:50%;height:30px;margin-right: 4%;
+    }
+    form.accerta .form-group input[type=submit].submit.btn {
+        height:20px;font-size: 13px;
+    }
+    #review-item {
+        width: 90%;
+    }
+    #show-p {
+        width:70%;display: none;position: absolute;background: #ffffff;z-index: 2000;height: 15em;color: #788888;top: 0%;left: 13%;border-radius: 3px;
+    }
+    #_ret {
+        margin: 13% 1% 0 1%;width: 96%;
+    }
+    #used-item {
+        width:90%;font-size: 12px;font-weight: 700;font-family: 'Courier New', Courier, monospace;margin: 0 0 0 4%;
+    }
+    #have_used_item {
+        background: #e0dede;color: #788888;border: 1px solid #cdd3d3;width: 90%;
+    }
+    #used {
+        display: none;margin: 2% 0 0 5%;font-size: 12px;text-transform:capitalize;font-weight: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #646864;
+    }
+    #duration-of-use {
+        width: 80%;font-family:'Courier New', Courier, monospace;display: none;position: absolute;background: #ffffff;z-index: 90;height: inherit;color: #788888;top: 0;left: 10%;border-radius: 3px;text-align:center;
+    }
+    #i-rev {
+        font-weight:700;font-family: Verdana, Geneva, Tahoma, sans-serif;margin: 5% auto;color: #849b9b;font-size: 11px;text-align: center;
+    }
+    #post-rev-contena .form-group {
+        margin: 1% auto;padding: .3% auto;text-align:left;
+    }
+    #post-rev-contena .form-group label{
+        text-align:left;margin: 0 auto;padding: 1% auto;float:left;font-size:12px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #post-rev-contena .form-group label#used-item{
+        margin: 0 auto 0 -5%;padding: 1% auto;float:left;font-size:12px;text-align:left;
+    }
+    .review._it {
+        text-transform:capitalize; width: 60%;font-size: 12px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;color: #3a3a3b;margin: 1% auto 0 4%;text-align:left;
+    }
+    input[type=varchar]#used-period {
+        font-size: 12px;float: right;margin: -2em 3% 2em 2%;width: 40%;color: #222345;background:#e5e5e7;border: 1px solid #b9bac2;height: 20px;
+    }
+    #recommend-item {
+        background: #e8e8ec;border: 1px solid #cfcdd3;float: right;margin: -2em 3% 2em 2%;width: 30%;
+    }
+    #reason-for-rec {
+        background: transparent;width: 90%;height: 5em;border: 1px solid #e7e5eb;margin: 2% auto 1% 5%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:11px;
+    }
+    #max-word {
+        font-size: 11px;margin: 0% auto 1% 4%;color: #414242;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .rateitem img.rated-now {
+        width: 3em; height: 2.5em;margin: 2% auto 0 1%;
+    }
+    #showrated {
+        width: 50%;margin: 2% auto 0 0%;
+    }
+    #show-rated {
+        color:#3b3f37;font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 11px;text-transform: capitalize;
+    }
+    .view_rating {
+        margin: 2% auto 0 4%;color:#3b3f37;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 11px;text-transform: capitalize;
+    }
+    #remove-rated {
+        float: right;margin: -3em 0 0 0;color: #768665;
+    }
+    #post-rev-contena {
+        border: 1px solid #e2dfdf;margin: 3%;padding: 1%;
+    }
+    #dok-er {
+        text-align: center;display:inline-block;
+    }
+    input[type=submit]#subm-it {
+        font-size: 12px;border:none;border-radius: 3px; margin:1% 0;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;
+    }
+    input[type=submit]#submt {
+        font-size: 12px;border:none;border-radius: 3px; margin:1% 0;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: right;
+    }
+    img#imgclick {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick1 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick2 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick3 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick4 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick5 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    .pop-p-images .pop-images {
+        width:4em;height:4em;
+    }
+    .pop-p-images .pop-images .ad.gio {
+        width:3em;height:3em;
+    }
+    img#imgclick6 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick7 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick8 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    #connect-with-us {
+        width: 35%;
+        float: right;
+        padding: 0;
+        margin: 2em 0 0 0; text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #connect-with-us .connect.intro{
+        padding-bottom: 1%;
+        font-family: tahoma;
+        color: #7debf3;
+        font-size: 11px;
+        text-align: center;    
+    }
+    
+    #connect-with-us .hold-em{
+        cursor: pointer;
+        display: inline-block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    #connect-with-us .hold-em .socials {
+        padding: 0;display: inline-block;
+    }
+    #connect-with-us .hold-em .socials a {
+        color: #ffffff;text-decoration: none;
+    }
+    #connect-with-us .hold-em .socials:hover{
+        box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #legal-policies {
+        margin: 2em 0 0 0;
+    }
+    #legal-policies .legal {
+        font-size: 10px;
+    }
+    #legal-policies ul {
+        list-style: none;margin: 1em 0 0 0;
+    }
+    #legal-policies ul li{
+        padding: 1%;
+    }
+    #legal-policies ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #legal-policies ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #promote-content {
+        margin: 2em 0 0 0;
+    }
+    #promote-content .help-me {
+        font-size: 10px;
+    }
+    #promote-content ul {
+        margin: 1em 0 0 0;
+    }
+    #promote-content ul li{
+        padding: 1%;
+    }
+    #promote-content ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #promote-content ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #mymusicbaz-subdomains {
+        margin: 2em 0 0 .3em; 
+    }
+    #mymusicbaz-subdomains .mymusicbaz {
+        font-size: 10px;
+    }
+    #mymusicbaz-subdomains ul li a{
+        font-size:11px;
+    }
+    .end.float {
+        clear: both;
+    }
+    .loat.end {
+        clear: right;
+    }
+    #rights-reserved {
+        margin: 3em 0 0 0;
+        color: #f5f5f5;
+        font-style: italic;
+        text-align: center;
+        font-size: 12px;
+    }
+    #go-to-top {
+        float: right;
+        padding: .2%;
+        font-weight: 700;
+        margin-right: 4%; 
+        text-decoration: none;
+        font-size:12px;
+        color: #ffffff;
+    }
+    footer {
+        height:200px;
+    }
+}
+
+
+
+@media screen and (min-width: 560px) and (max-width:800px) {
+    .search {
+        margin: 0em 0 0em 1em;
+        width: 35%;
+        height: 40px;
+        float: left;
+    }
+    .search form .form.box {
+        width: 100%;
+    }
+    .search form .form.box input[type=text]#search-input {
+        width:80%;
+    }
+    .search form .form.box button#search-result {
+        width:5%;
+    }
+    ul #post-a-review {
+        margin: 0% 2% 0 2%; 
+        height:38px;
+    }
+    ul #post-a-review #heta-info{
+        width:140%;
+    }
+    ul #post-a-review #het-info{
+        width:140%;
+    }
+    ul #post-a-review #hets-info{
+        width:140%;display:none;position:absolute;font-size:12px;font-weight: normal;text-align:left;font-family:sans-serif;top:110%;z-index:900;font-weight:normal;background: #dadbda;color:#2e2e35;line-height: 20px;padding: .5em;margin: 0 0 0 -.2em;
+    }
+    ul .notification {
+        width: 10%;
+        margin: -.3em 1% 0 0;
+    }
+    ul .notification ul#list-notifications {
+        display: none;background: #d3d1d1;margin: 0 1% 0 -13em;width: 18em;position:relative;z-index: 1;height:inherit;
+    }
+    .nav ul li.in {
+        margin: 0em 1% 0em 5%;
+    }
+     .nav ul li.in a img#profile_pics {
+         width: 40px;
+         height:35px;
+         margin: 0.25em 0 0em 0;
+         border-radius: 3px;
+    }
+    #show-banner-ads-small {
+        width:100%;height:10em;margin: 0% auto;padding:0 .5%;
+    }
+    #show-banner-ads-small img#img-adset {
+        width:100%;height:10em;
+    }
+    .show.profiledetail {
+        width: 90%;margin: 2% 2% 3% 2%;background: transparent;border-radius:10%;height: 14em;text-align: center;float: left;
+    }
+    .show.profiledetail .udetails img#profile_pics {
+        width:60%;height: 7em;border-radius: 50%;margin: 8% 0 0 0;
+    }
+    .side.bar {
+        width:28%;float: left;
+    }
+    #see-reviews {
+        font-size: 12px;margin-left: 1em;padding-left: 1em; 
+    }
+    .main.content {
+        margin: 2em 0 3em 29%;
+        width: 70%;
+    }
+    #show-own-ad ._ser {font-size:11px;padding: .3em 0 .5em .5em; }
+    #show-banner-ads #remove-ad {
+        position: absolute;top: 8%;right: 6%;color: #b1afb6;font-size:10px;
+    }
+    #show-banner-ads img#ad-img {
+        margin:2% auto;height: 6em;
+    }
+    #show-banner-ads #remove-ad #etan-ad {
+        background: transparent;display: none;right:2%;margin-top:3%;font-weight: 700;color: #fdfbfb;
+    }
+    #show-banner-ads #remove-ad #hut-ad {
+        font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+    }
+    #container {width:90%;}
+    #profile-edit-error {
+        font-size: 12px; 
+    }
+    .edit.profile.form {
+        height:inherit;margin: 0 0 1em 0;width: 90%;
+    }
+    .edit.profile.form form{
+        width:95%;
+    }
+    .edit.profile.form form .form-group {
+        padding: 4%;
+    }
+    .edit.profile.form form .form-group label#name{
+        font-size: 12px;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#namechk{
+        width:85%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;
+    }
+    #nameStatus {
+        text-align:left;font-size:12px;margin-left:10em;
+    }
+    .edit.profile.form form .form-group label#phone{
+        float:left;margin-left:-3em;margin-top:.5em;background: transparent;font-size: 12px;
+    }
+    .arr.phone {
+        float:right;width: 60%;margin: -2em 2% 0em 0;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#phonechk{
+        width:80%;height:30px;outline:none;border:1px solid #dddada;background:#eaeaea;margin: 0 0 0 -.4em;font-size: 12px;float: right;
+    }
+    #allpasswordStatus {
+        text-align:left;font-size:12px;margin-left:12em;
+    }
+    .phone.no {
+        background: #aaa8a8; width: 13%;margin-left:-2em; height: 15px;font-weight: 700;padding: 8px 8px 8px 8px;color: #58585e;float: left;
+    }
+    #user-type {
+        width:75%;height:30px;outline:none;border:1px solid #f1f1f1;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+    }
+    .clear.float {
+        clear: right;
+    }
+    .stopit {
+        clear: left;
+    }
+    .edit.profile.form form .form-group input[type=submit].submit.btn {
+        cursor:pointer;border:none;color:#800;background:transparent;height:30px;width:150px;font-weight:700;margin: 0em auto;font-size: 15px;text-align: center;
+    }
+    .total.refamount {
+        font-size:12px;
+    }
+    .refcount {
+        font-size:12px;
+    }
+    form.cancel.ad.now input[type=submit].cancel.ad {
+        margin-left: 0em;width:25%;cursor:pointer;
+    }
+
+    .grad {
+        float:left;
+        width:46%;
+        height:18.5em;
+        padding: .1em;
+        margin: .4em;
+    }
+    .itemimgs {
+        display:inline-block;width:.5em;height:.4em;margin:0.3em 0 0 1em;border:1px solid #444;border-radius:50%;
+    }
+    img#mainimgs {
+        width:100%;
+        height: 12em;
+        border-radius: 3px;
+    }
+    .p-title {
+        margin: 0em 0 -0.3em 0;font-weight:700;font-family:arial;
+    }
+    .p-title a {
+        text-decoration: none;color:#585757;font-size:13px;text-transform: capitalize;
+    }
+    form.send-me-to input[type=submit].link-me-to-url {
+        text-decoration: none;color:#585757;font-size:13px;text-transform: capitalize;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 500;font-stretch: normal;background: transparent;border: none;cursor: pointer;
+    }
+    .rea.reca {
+        font-size:11px;font-family: sans-serif; font-weight: 300;color: #a34242; padding: .3em;
+    }
+    .full.title {
+        bottom:32%;
+    }
+    #c-all {
+        width: 98%;margin: 2% auto;position: relative;
+    }
+    #imgcot {
+        background: #969696;width: 100%;margin: auto; 
+    }
+    img#imgshow {
+        width: 100%;height: 20em;margin: 0;border-radius: 3px;
+    }
+    .strack {
+        margin: 1%;width: 100%;
+    }
+    .strack a {
+        font-size:12px;
+    }
+    .follow {
+        margin: 2em 2em 0 0;position:relative;
+    }
+    .followme {
+        font-size:13px;
+    }
+    .dsef {
+        font-size:13px;
+    }
+    #share-exp{
+        font-size:12px;
+        left:30%;top:55%;border-radius:3px;
+        background: #f1f1f1;width: 68%;
+    }
+    .modal {
+        width: 80%;
+    }
+    #customer-rec {
+        width: 90%;
+    }
+    .rec.down {
+        margin: 1% auto;display: inline-block;
+    }
+    .u.details{
+        margin: 2% auto;display: inline-block;width: 30%;
+    }
+    .u.details .u.picx {
+        display: inline-block;width: 3em;height: 3em;border-radius: 3px;
+    }
+    .u.details .uname {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;text-transform: capitalize;
+    }
+    .al._rec {
+        margin: 0.5em .2em 2em;display: inline-block;width: 60%;
+    }
+    ._recomendation {
+        font-size:11px;font-family: sans-serif; font-weight: 700;color: #30304b;
+    }
+    ._recomendation .rec._des {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;
+    }
+    .rea.rec {
+        font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: 20px;
+    } 
+    .rea._des {
+        font-size:12px;font-family: cursive; font-weight: 700;color: #505053;  
+    }
+    #no-rec {
+        font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 1% auto;
+    }
+    #load-more-rec {
+        font-size: 11px; 
+    }
+    #submitaccdet {
+        width:70%;
+    }
+    #closereg2 {
+        font-size: 14px;
+    }
+    .oloro {
+        margin:3% auto;font-size: 12px;
+    }
+    form.accerta {
+        margin: 3% auto;
+    }
+    form.accerta .form-group {
+        padding: 1%;margin: 2% auto 2% 0;
+    } 
+    .url.info {
+        width: 80%;
+    }
+    form.accerta .form-group:hover .url.info{
+        display: block;
+    }
+    form.accerta .form-group label {
+        margin: 0 0 0 .4em;font-size: 13px;
+    }
+    form.accerta .form-group input[type=varchar].form-control {
+        width:50%;height:30px;margin-right: 4%;
+    }
+    form.accerta .form-group input[type=submit].submit.btn {
+        height:20px;font-size: 13px;
+    }
+    #review-item {
+        width: 90%;
+    }
+    #show-p {
+        width:70%;display: none;position: absolute;background: #ffffff;z-index: 2000;height: 15em;color: #788888;top: 0%;left: 13%;border-radius: 3px;
+    }
+    #_ret {
+        margin: 13% 1% 0 1%;width: 96%;
+    }
+    #used-item {
+        width:70%;float: left;font-size: 14px;font-weight: 700;font-family: 'Courier New', Courier, monospace;margin: 0 0 0 4%;
+    }
+    #have_used_item {
+        background: #e0dede;color: #788888;border: 1px solid #cdd3d3;width: 40%;
+    }
+    #used {
+        display: none;margin: 2% 0 0 5%;font-size: 12px;text-transform:capitalize;font-weight: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #646864;
+    }
+    #duration-of-use {
+        width: 80%;font-family:'Courier New', Courier, monospace;display: none;position: absolute;background: #ffffff;z-index: 90;height: inherit;color: #788888;top: 0;left: 10%;border-radius: 3px;text-align:center;
+    }
+    #i-rev {
+        font-weight:700;font-family: Verdana, Geneva, Tahoma, sans-serif;margin: 5% auto;color: #849b9b;font-size: 11px;text-align: center;
+    }
+    #post-rev-contena .form-group {
+        margin: 1% auto;padding: .3% auto;text-align:left;
+    }
+    #post-rev-contena .form-group label{
+        text-align:left;margin: 0 auto;padding: 1% auto;float:left;font-size:13px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #post-rev-contena .form-group label#used-item{
+        margin: 0 auto 0 -5%;padding: 1% auto;float:left;font-size:13px;text-align:left;
+    }
+    .review._it {
+        text-transform:capitalize; width: 60%;font-size: 14px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;color: #3a3a3b;margin: 1% auto 0 4%;text-align:left;
+    }
+    input[type=varchar]#used-period {
+        font-size: 12px;float: right;margin: -2em 3% 2em 2%;width: 40%;color: #222345;background:#e5e5e7;border: 1px solid #b9bac2;height: 20px;
+    }
+    #recommend-item {
+        background: #e8e8ec;border: 1px solid #cfcdd3;float: right;margin: -2em 3% 2em 2%;width: 30%;
+    }
+    #reason-for-rec {
+        background: transparent;width: 90%;height: 5em;border: 1px solid #e7e5eb;margin: 2% auto 1% 5%;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:11px;
+    }
+    #max-word {
+        font-size: 11px;margin: 0% auto 1% 4%;color: #414242;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .rateitem img.rated-now {
+        width: 4.5em; height: 3.5em;margin: 2% auto 0 3%;
+    }
+    #showrated {
+        width: 50%;margin: 2% auto 0 0%;
+    }
+    #show-rated {
+        color:#3b3f37;font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+    }
+    .view_rating {
+        margin: 2% auto 0 4%;color:#3b3f37;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+    }
+    #remove-rated {
+        float: right;margin: -3em 0 0 0;color: #768665;
+    }
+    #post-rev-contena {
+        border: 1px solid #e2dfdf;margin: 3%;padding: 1%;
+    }
+    #dok-er {
+        text-align: center;display:inline-block;
+    }
+    input[type=submit]#subm-it {
+        font-size: 14px;border:none;border-radius: 3px; margin:1% 1em 0 1em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;
+    }
+    input[type=submit]#submt {
+        font-size: 14px;border:none;border-radius: 3px; margin:1% 1em 0 1em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: right;
+    }
+    .pop-p-images .pop-images {
+        width:4em;height:4em;
+    }
+    .pop-p-images .pop-images .ad.gio {
+        width:3em;height:3em;
+    }
+    img#imgclick6 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick7 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    img#imgclick8 {
+        width:1.2em;height: 1.2em;margin: 1em 0 0 0em;
+    }
+    #connect-with-us {
+        width: 35%;
+        float: right;
+        padding: 0;
+        margin: 2em 0 0 0; text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #connect-with-us .connect.intro{
+        padding-bottom: 1%;
+        font-family: tahoma;
+        color: #7debf3;
+        font-size: 11px;
+        text-align: center;    
+    }
+    
+    #connect-with-us .hold-em{
+        cursor: pointer;
+        display: inline-block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    #connect-with-us .hold-em .socials {
+        padding: 0;display: inline-block;
+    }
+    #connect-with-us .hold-em .socials a {
+        color: #ffffff;text-decoration: none;
+    }
+    #connect-with-us .hold-em .socials:hover{
+        box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #legal-policies {
+        margin: 2em 0 0 0;
+    }
+    #legal-policies .legal {
+        font-size: 10px;
+    }
+    #legal-policies ul {
+        list-style: none;margin: 1em 0 0 0;
+    }
+    #legal-policies ul li{
+        padding: 1%;
+    }
+    #legal-policies ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #legal-policies ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #promote-content {
+        margin: 2em 0 0 0;
+    }
+    #promote-content .help-me {
+        font-size: 10px;
+    }
+    #promote-content ul {
+        margin: 1em 0 0 0;
+    }
+    #promote-content ul li{
+        padding: 1%;
+    }
+    #promote-content ul li a{
+        font-size:11px;margin: 0 0 1em 0;
+    }
+    #promote-content ul li a:hover{
+        color: #ffffff;box-shadow: 0 2px 0 0 #f1f1f1;
+    }
+    #mymusicbaz-subdomains {
+        margin: 2em 0 0 .3em; 
+    }
+    #mymusicbaz-subdomains .mymusicbaz {
+        font-size: 10px;
+    }
+    #mymusicbaz-subdomains ul li a{
+        font-size:11px;
+    }
+    .end.float {
+        clear: both;
+    }
+    .loat.end {
+        clear: right;
+    }
+    #rights-reserved {
+        margin: 3em 0 0 0;
+        color: #f5f5f5;
+        font-style: italic;
+        text-align: center;
+        font-size: 12px;
+    }
+    #go-to-top {
+        float: right;
+        padding: .2%;
+        font-weight: 700;
+        margin-right: 4%; 
+        text-decoration: none;
+        font-size:12px;
+        color: #ffffff;
+    }
+    footer {
+        height:200px;
+    }
+}
+
+
+
+@media screen and (min-width:800px) and (max-width:1040px) {
+    
+    ul #post-a-review {
+        margin: 0% 2% 0 2%; 
+        height:38px;
+    }
+    ul .notification {
+        width: 10%;
+        margin: -.3em 1% 0 0;
+    }
+    ul .notification ul#list-notifications {
+        display: none;background: #d3d1d1;margin: 0 1% 0 -12em;width: 20em;position:relative;z-index: 1;height:inherit;
+    }
+    ul .notification:hover ul#list-notifications {
+        display: block;
+    }
+    .nav ul li.in {
+        margin: 0em 1% 0em 10%;
+    }
+     .nav ul li.in a img#profile_pics {
+         width: 40px;
+         height:35px;
+         margin: 0.25em 0 0em 0;
+         border-radius: 3px;
+    }
+    #show-banner-ads #remove-ad {
+        position: absolute;top: 4%;right: 6%;color: #b1afb6;font-size:10px;
+    }
+    #show-banner-ads #remove-ad #etan-ad {
+        background: transparent;display: none;right:2%;margin-top:3%;font-weight: 700;color: #fdfbfb;
+    }
+    #show-banner-ads #remove-ad #hut-ad {
+        font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+    }
+    .show.profiledetail {
+        width: 90%;margin: 2% 2% 3% 2%;background:transparent;border-radius:10%;height: 14em;text-align: center;float: left;
+    }
+    .show.profiledetail .udetails img#profile_pics {
+        width:60%;height: 7em;border-radius: 50%;margin: 8% 0 0 0;
+    }
+    #c-all {
+        width: 98%;margin: 0 auto ;position: relative;float: left;background: #ffffff;
+    }
+    #imgcot {
+        background: #969696;width: 98%;margin: 2% auto; 
+    }
+    #imgshow {
+        width: 100%;height: 25em;margin: 0;border-radius: 3px;
+    }
+    .imgslide {
+        display: inline-block;text-align:center;margin: 0 auto;
+    }
+    .imgslide .change.img {
+        width :4em;padding: .4em;margin: 0 0 0 1em;border-radius: 10px;
+    }
+    #item-display-content {
+        width: 100%;margin: 4% .5%;
+    }
+    #share-exp{
+        display:none;cursor:default;position: fixed;
+        padding:.2em;
+        font-size:12px;
+        font-weight:700;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        left:27%;top:55%;border-radius:3px;
+        background: #f1f1f1;
+    }
+    .grad {
+        float:left;
+        width:31.5%;
+        height:18em;
+        background: #f1f1f1;
+        padding: 0;
+        margin: .4em;
+        position:relative;
+    }
+    #mainimgs {
+        width:100%;
+        height: 11.6em;
+        border-radius: 3px;
+    }
+    .p-link {
+        text-align: center;position: relative;
+    }
+    .p-link:hover .show-website{
+        display: block;
+    }
+    .show-website {
+        color: #535151;position: absolute;bottom: 65%;display: none;z-index: 9000;font-weight: 700;left:0;right: 0;font-size: 12px;
+    }
+    .p-title a{
+        font-size: 13px;
+    }
+    .rea.rec {
+        font-size:12px;font-family: sans-serif; font-weight: 300;color: #30304b;
+    } 
+    .p-title:hover .full.title {
+        display:block;
+    }
+    .full.title {
+        display:none;position:absolute;text-transform: capitalize;font-size:10px;font-family:arial;bottom:32%;background:transparent;width:200%;z-index: 900;
+    }
+    .modal {
+        width: 70%;
+    }
+    .p-link {
+        text-align: center;
+    }
+    form.send-me-to input[type=submit].link-me-to-url {
+        text-decoration: none;color:#585757;font-size:13px;background: none;
+    }
+    #review-item {
+        width: 80%;
+    }
+    #show-p {
+        width:50%;display: none;position: absolute;background: #ffffff;z-index: 2000;height: 15em;color: #788888;top: 0%;left: 25%;border-radius: 3px;
+    }
+    #_ret {
+        margin: 13% 1% 0 1%;width: 96%;
+    }
+    #used-item {
+        width:60%;float: left;font-size: 14px;font-weight: 700;font-family: 'Courier New', Courier, monospace;margin: 0 0 0 4%;
+    }
+    #have_used_item {
+        background: #e0dede;color: #788888;border: 1px solid #cdd3d3;width: 40%;
+    }
+    #used {
+        display: none;margin: 2% 0 0 5%;font-size: 12px;text-transform:capitalize;font-weight: 300;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #646864;
+    }
+    #duration-of-use {
+        width: 60%;font-family:'Courier New', Courier, monospace;display: none;position: absolute;background: #ffffff;z-index: 90;height: inherit;color: #788888;top: 0;left: 20%;border-radius: 3px;text-align:center;
+    }
+    #i-rev {
+        font-weight:700;font-family: Verdana, Geneva, Tahoma, sans-serif;margin: 5% auto;color: #849b9b;font-size: 11px;text-align: center;
+    }
+    #post-rev-contena .form-group {
+        margin: 1% auto;padding: .3% auto;text-align:left;
+    }
+    #post-rev-contena .form-group label{
+        text-align:left;margin: 0 auto;padding: 1% auto;float:left;font-size:13px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #post-rev-contena .form-group label#used-item{
+        margin: 0 auto 0 -5%;padding: 1% auto;float:left;font-size:13px;text-align:left;
+    }
+    .review._it {
+        text-transform:capitalize; width: 60%;font-size: 14px;font-weight: 500;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;color: #3a3a3b;margin: 1% auto 0 4%;text-align:left;
+    }
+    input[type=varchar]#used-period {
+        font-size: 12px;float: right;margin: -2em 3% 2em 2%;width: 40%;color: #222345;background:#e5e5e7;border: 1px solid #b9bac2;height: 20px;
+    }
+    #recommend-item {
+        background: #e8e8ec;border: 1px solid #cfcdd3;float: right;margin: -2em 3% 2em 2%;width: 30%;
+    }
+    #reason-for-rec {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:11px;background: transparent;width: 90%;height: 10em;border: 1px solid #e7e5eb;margin: 2% auto 1% 5%;
+    }
+    #max-word {
+        font-size: 11px;margin: 0% auto 1% 4%;color: #414242;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .rateitem img.rated-now {
+        width: 4.5em; height: 3.5em;margin: 2% auto 0 3%;
+    }
+    #showrated {
+        width: 50%;margin: 2% auto 0 0%;
+    }
+    #show-rated {
+        color:#3b3f37;font-weight: normal;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+    }
+    .view_rating {
+        margin: 2% auto 0 4%;color:#3b3f37;font-weight: 700;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 12px;text-transform: capitalize;
+    }
+    #remove-rated {
+        float: right;margin: -3em 0 0 0;color: #768665;cursor:pointer;
+    }
+    #post-rev-contena {
+        border: 1px solid #e2dfdf;margin: 3%;padding: 1%;
+    }
+    #dok-er {
+        text-align: center;display:inline-block;
+    }
+    input[type=submit]#subm-it {
+        font-size: 14px;border:none;border-radius: 3px; margin:1% 1em 0 1em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: left;
+    }
+    input[type=submit]#submt {
+        font-size: 14px;border:none;border-radius: 3px; margin:1% 1em 0 1em;padding:.5% 1% 1% 1%;text-align:center; font-weight: 700;color: #22453e;background:#eaeaf3;height: 25px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;float: right;
+    }
+    form.cancel.ad.now input[type=submit].cancel.ad {
+        width:20%;
+    }
+    .edit.profile.form form .form-group label#phone{
+        float:left;margin-left:-3.5em;margin-top:.5em;background: transparent;font-size: 14px;
+    }
+    .arr.phone {
+        float:right;width: 70%;margin: -2em 8% 0em 0;
+    }
+    .phone.no {
+        background: #aaa8a8; width: 10%; height: 15px;font-weight: 700;padding: 11px;color: #58585e;float: left;margin: 0 0 -1em 0;padding: 0 0 0 -1em;
+    }
+    .edit.profile.form form .form-group input[type=varchar]#phonechk{
+        width:70%;height:35px;outline:none;border:1px solid #dddada;background:#eaeaea;margin: 0 0 0 -1em;font-size: 12px;float: right;
+    }
+    #customer-rec {
+        width: 70%;
+    }
+    .rec.down {
+        margin: 1% auto;display: inline-block;
+    }
+    .u.details{
+        margin: 2% auto;display: inline-block;width: 30%;
+    }
+    .u.details .u.picx {
+        display: inline-block;width: 3em;height: 3em;border-radius: 3px;
+    }
+    .u.details .uname {
+        font-size:11px;font-family: cursive; font-weight: 700;color: #505053;text-transform: capitalize;
+    }
+    .al._rec {
+        margin: 0.5em .2em 2em;display: inline-block;width: 60%;
+    }
+    ._recomendation {
+        font-size:12px;font-family: sans-serif; font-weight: 700;color: #30304b;
+    }
+    ._recomendation .rec._des {
+        font-size:12px;font-family: cursive; font-weight: 700;color: #505053;
+    }
+    .rea.rec {
+        font-size:14px;font-family: sans-serif; font-weight: 300;color: #30304b; line-height: 20px;
+    } 
+    .rea._des {
+        font-size:12px;font-family: cursive; font-weight: 700;color: #505053;  
+    }
+    #no-rec {
+        font-size: 12px; font-weight: 700; color: #594758; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;margin: 1% auto;
+    }
+    #load-more-rec {
+        font-size: 11px; 
+    }
+    #load-next {
+        text-align: center;margin: 4% auto;cursor:default;font-size: 13px;font-weight: 700;text-transform:capitalize;color: #676b67;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;background: #d1cfcc;padding: .5em;
+    }
+    #read-me {
+        width: 98%;margin: 2% 0 2% .5%;
+    }
+    input[name=title].form-control {
+        width:95%;height:30px;outline:none;border:1px solid #f1f1f1;background:#eaeaea;margin-right: 2%;float: right;margin-top:-2em;font-size: 12px;color: #788888;
+    }
+    #connect-with-us .hold-em{
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 0em 0 1em;
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (min-width:1040px) and (max-width:1220px) {
+
+    .grad {
+        float:left;
+        width:23.5%;
+        height:18em;
+        background: #f1f1f1;
+        padding: 0;
+        margin: .4em;
+        position:relative;
+    }
+    .remove-ad {
+        top: 3%;right: 3%;font-size:10px;
+    }
+    .remove-ad .etan-ad {
+        background: transparent;display: block;right:2%;margin-top:3%;color: #f0f0f5;font-weight:700;padding: .3em;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .remove-ad .hut-ad {
+        font-size: 14px;background: #f9f9f9;padding: 0 .2em;border-radius:2px;top:0;right:-1em;position: absolute;
+    }
+    #mainimgs {
+        width:100%;
+        height: 11.5em;
+        border-radius: 3px;
+    }
+    .p-title {
+        margin: -.1em 0 0 0;
+    }
+    .p-title a {
+        font-size: 13px;
+    }
+    .full.title {
+        bottom: 31.4%;
+    }
+    form.send-me-to input[type=submit].link-me-to-url {
+        font-size:13px;
+    }
+}

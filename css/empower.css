@@ -1,0 +1,171 @@
+.main-panel {
+    background-color: gray;font-family: 'Montserrat';
+    font-size: 14px;
+}
+.page-body-wrapper h1 {
+    color: #f5eded;margin: 2rem auto;font-size: 28px;font-family: 'Montserrat';
+    font-weight: 400;padding: 1rem 5rem;font-weight: bold;line-height: 36px;
+}
+.page-body-wrapper h1 .empowered1 {
+    color: orange;
+}
+.all-talents-imgs {
+    padding: 4rem;margin: auto;text-align: center;
+}
+.all-talents-imgs .af-talents {
+    width: 10rem;height: 12rem;margin: auto;text-align: center;margin: .4rem;
+}
+.share-talent-upload-form {
+    width: 60%;padding: 1rem 2rem 1rem 2rem;text-align: center;margin: auto;
+    background-color: #ffffff;border-radius: 10px;box-shadow: 1px 1px 1px 0px #e7e5e5;
+    margin-bottom: 10rem;
+}
+.share-talent-upload-form h1 {
+    color: gray;
+}
+.share-talent-upload-form .form-group {
+    position: relative;width: 92%;text-align: center;margin: auto;
+}
+.share-talent-upload-form form label {
+    float: left;color: gray;
+}
+.col-form-label:hover .hide {
+    display: block;background-color: gray;color: #ffffff;
+}
+#change,.talent {
+    font-weight: 600;
+}
+.share-talent-upload-form .form-group textarea {
+    width: 100%;border: 1px solid #e7e5e5;border-radius: 4px;
+}
+.share-talent-upload-form input[type='file'] {
+    border: none;
+}
+.excerpt-info {
+    display: none;
+}
+.excerpt-info .excerpt {
+    font-size: 10px;font-family: sans-serif;
+}
+.hide {
+    display: none;position: absolute;bottom: 90%;padding: .2rem;width: 40%;text-align: left;
+    border-radius: 6px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;padding-left: 1rem;
+}
+.hide:after {
+    background: gray;
+    border-radius: .5em;
+    top: 80%;
+    color: gray;
+    content: "";
+    display: block;
+    position: absolute;
+    border:  transparent transparent gray transparent;
+    border-style: solid;border-width: .5rem;
+    margin-left: 80%;
+}
+.hide .ordered {
+    margin-left: 1rem;
+}
+#text-area,#talent,#business,#idea,#business-plan,#sub-form,#upload-form,#upload-progress-bar {
+    display: block;
+}
+#upload-progress-bar {
+    display: none;height: .4rem;width: 100%;margin: 2rem auto;
+    background-color: gray;border-radius: 50px;
+}
+.reqd {
+    color: red;
+}
+.share-talent-upload-form button.btn {
+    background-color: gray;color: #ffffff;
+}
+.bizplan-report {
+    color: gray;text-align: left;font-weight: bold;
+}
+.label-div {
+    color: gray;float: left;
+    margin-bottom: 2rem;
+}
+.share-talent-upload-form #drop_file_zone {
+    background-color: #f1f1f1;
+    border: #999 5px dashed;
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+    padding: 8px;
+    font-size: 18px;
+}
+#drag_upload_file {
+    width:50%;
+    margin:10% auto;
+}
+#drag_upload_file p {
+    text-align: center;color: gray;
+}
+#drag_upload_file #selectfile {
+    display: none;
+}
+#loaded-n-total,#status {
+    color: gray;
+}
+.svg-animate {
+    position: relative;height: 120px;width: 100%;
+    display: none;
+}
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+}
+
+.arrows path {
+    stroke: #2994D1;
+    fill: transparent;
+    stroke-width: 1px;	
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+.end-float {
+    clear:both;
+}
+.select-thumbnail {
+    width: 100%;
+}
+.select-thumbnail .empower-thumbnail {
+    float: left;width: 13rem; max-height: 12rem;
+    padding: .2rem; margin: .1rem auto;
+}

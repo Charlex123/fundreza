@@ -1,0 +1,42 @@
+[21-Sep-2021 09:36:33 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:36:34 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:36:56 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:36:57 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:39:57 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:39:57 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:41:08 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:41:09 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:43:04 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:43:04 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:44:05 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:44:05 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 09:45:07 UTC] PHP Notice:  Undefined index: amount in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 09:45:08 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[21-Sep-2021 17:57:02 UTC] PHP Notice:  Undefined index: fundraiserGoal in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[21-Sep-2021 17:57:03 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[06-Oct-2021 12:38:28 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:39:06 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:41:09 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:41:09 UTC] PHP Notice:  Undefined variable: amount in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[06-Oct-2021 12:41:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function currencyConverter() in /home/fundgcmf/public_html/currencyconversion/convert.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/fundgcmf/public_html/currencyconversion/convert.php on line 12
+[06-Oct-2021 12:41:22 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:41:22 UTC] PHP Notice:  Undefined variable: amount in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[06-Oct-2021 12:41:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function currencyConverter() in /home/fundgcmf/public_html/currencyconversion/convert.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/fundgcmf/public_html/currencyconversion/convert.php on line 12
+[06-Oct-2021 12:42:43 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:42:43 UTC] PHP Notice:  Undefined variable: amount in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[06-Oct-2021 12:42:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function currencyConverter() in /home/fundgcmf/public_html/currencyconversion/convert.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/fundgcmf/public_html/currencyconversion/convert.php on line 12
+[06-Oct-2021 12:43:12 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:43:12 UTC] PHP Notice:  Undefined variable: amount in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10
+[06-Oct-2021 12:45:25 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:48:36 UTC] PHP Notice:  Undefined index: fundraiserGoal in /home/fundgcmf/public_html/currencyconversion/convert.php on line 6
+[06-Oct-2021 12:48:37 UTC] PHP Notice:  Undefined offset: 1 in /home/fundgcmf/public_html/currencyconversion/functions.php on line 9
+[06-Oct-2021 12:48:37 UTC] PHP Warning:  A non-numeric value encountered in /home/fundgcmf/public_html/currencyconversion/functions.php on line 10

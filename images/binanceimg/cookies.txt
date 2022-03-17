@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.binancehelp.net	TRUE	/	FALSE	1999999999	__cfduid	d0571e2a7a9f4ae5203948078193b42f91614541468
+binancehelp.net	TRUE	/	FALSE	1999999999	SameSite	Lax
+

@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name ="viewport" content="width=device-width,initial-scale=1.0" />
+    
+    <script lang="javascript" type="text/javascript" src="javascript/jquery-3.2.1.js"></script>
+    
+    <title >......tailoring your music and entertainment experience to your need </title>
+    <style>
+        /* for medium phones and ipad*/
+        @media screen and (max-width: 420px) {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        #container {background:#f8f8f8;width:100%;margin:0;}
+        .center {
+        background-color:#ccc;
+        width:100%;
+        height: 6em;
+        }
+        .center #site-intro {width:100%;padding: .5%;}
+        .center img{padding:0% 1%;width: 3em;margin: 6% 0 0 0;}
+        .center #site-intro #head-title {float: left;padding: 3.5% 0;margin: 3em 0 0 -2em;width: 80%;color: #800;font-weight: 700;font-style: italic;font-size: 12px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        .reg.form {
+            height:inherit;margin: 24% auto;
+        }
+        .reg.form .ajax-reg{
+            width:80%;text-align:center;margin:auto;margin-bottom:20px;background:#fff;border-radius:15px;border:1px solid #f1f1f1;font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+        .reg.form .ajax-reg #join{
+            color:#ff0000;margin: 0 auto;font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 1%;font-weight: 700;
+        }
+        .reg.form .ajax-reg #recheck-reg-details{
+            color:#555;margin: 0 auto;font-size: 11.5px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 2% 0 8% 0%;
+        }
+        .reg.form .ajax-reg #recheck-reg-details a{
+            text-decoration: none;color: #008000;font-weight: 700;font-size: 11px;
+        }
+
+        }
+
+
+        /* for medium phones and ipad*/
+        @media screen and (min-width: 420px) and (max-width: 800px) {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        #container {background:#f8f8f8;width:100%;margin:0;}
+        .center {
+        background-color:#ccc;
+        width:100%;
+        height: 6em;
+        }
+        .center #site-intro {width:100%;padding: .5%;}
+        .center img{padding:0% 1%;width: 4em;margin: 2% 0 0 0;}
+        .center #site-intro #head-title {float: left;padding: 3.5% 0;margin: 2em 0 0 -1em;width: 80%;color: #800;font-weight: 700;font-style: italic;font-size: 14px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        .reg.form {
+            height:inherit;margin: 20% auto;
+        }
+        .reg.form .ajax-reg{
+            width:60%;text-align:center;margin:auto;margin-bottom:20px;background:#fff;border-radius:15px;border:1px solid #f1f1f1;font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+        .reg.form .ajax-reg #join{
+            color:#ff0000;margin: 0 auto;font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 1%;font-weight: 700;
+        }
+        .reg.form .ajax-reg #recheck-reg-details{
+            color:#555;margin: 0 auto;font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 2% 0 8% 0%;
+        }
+        .reg.form .ajax-reg #recheck-reg-details a{
+            text-decoration: none;color: #008000;font-weight: 700;font-size: 11px;
+        }
+
+        }
+
+
+
+        /* for large phones and ipad*/
+        @media screen and (min-width: 800px) and (max-width: 1032px) {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        #container {background:#f8f8f8;width:100%;margin:0;}
+        .center {
+        background-color:#ccc;
+        width:100%;
+        height: 6em;
+        }
+        .center #site-intro {width:100%;padding: .5%;}
+        .center img{padding:0% 1%;width: 10%;}
+        .center #site-intro #head-title {float: left;padding: 4.5% 0;color: #800;font-weight: 700;font-style: italic;font-size: 15px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        .reg.form {
+            height:inherit;margin: 16% auto;
+        }
+        .reg.form .ajax-reg{
+            width:45%;text-align:center;margin:auto;margin-bottom:20px;background:#fff;border-radius:15px;border:1px solid #f1f1f1;font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+        .reg.form .ajax-reg #join{
+            color:#ff0000;margin: 0 auto;font-size: 11px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 1%;font-weight: 700;
+        }
+        .reg.form .ajax-reg #recheck-reg-details{
+            color:#555;margin: 0 auto;font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 2% 0 8% 0%;
+        }
+        .reg.form .ajax-reg #recheck-reg-details a{
+            text-decoration: none;color: #008000;font-weight: 700;font-size: 11px;
+        }
+
+        }
+
+        /*for pc*/
+        @media screen and (min-width: 1032px) {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        #container {background:#f8f8f8;width:100%;margin:0;}
+        .center {
+        background-color:#ccc;
+        width:100%;
+        height: 6em;
+        }
+        .center #site-intro {width:80%;padding: .5%;}
+        .center img{padding:0% 1%;width: 10%;}
+        .center #site-intro #head-title {float: left;padding: 4.5% 0;color: #800;font-weight: 700;font-style: italic;font-size: 15px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        .reg.form {
+            height:inherit;margin: 8% auto;
+        }
+        .reg.form .ajax-reg{
+            width:40%;text-align:center;margin:auto;margin-bottom:20px;background:#eeebee;border-radius:15px;border:1px solid #f1f1f1;font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        }
+        .reg.form .ajax-reg #join{
+            color:#ff0000;margin: 0 auto;font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 1%;font-weight: 700;
+        }
+        .reg.form .ajax-reg #recheck-reg-details{
+            color:#555;margin: 0 auto;font-size: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;padding: 2% 0 8% 0%;
+        }
+        .reg.form .ajax-reg #recheck-reg-details a{
+            text-decoration: none;color: #008000;font-weight: 700;font-size: 11px;
+        }
+
+        }
+    </style>
+    <link rel="shortcut icon" href="images/images(212).jpg" />
+    </head>
+        <body>
+           
+           <div id="container" >
+
+                <div class='reg form'>
+                    
+                    <div class='ajax-reg'>
+                        <div id='join'>Oops! Registration Unsuccessful!!</div>
+                        <div id='recheck-reg-details'>Re-check your registration details and <a href='createaccount'>Register</a> again</div>   
+                    </div>
+                </div>
+                
+            </div>
+
+       </body>
+     
+</html>

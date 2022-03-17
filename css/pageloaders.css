@@ -1,0 +1,17 @@
+#progress {
+  position: fixed;
+  z-index: 2147483647;
+  top: 4.4rem;
+  left: -6px;
+  width: 0%;
+  height: 2px;
+  background: #22a349;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  -moz-transition: width 500ms ease-out, opacity 400ms linear;
+  -ms-transition: width 500ms ease-out, opacity 400ms linear;
+  -o-transition: width 500ms ease-out, opacity 400ms linear;
+  -webkit-transition: width 500ms ease-out, opacity 400ms linear;
+  transition: width 500ms ease-out, opacity 400ms linear;
+}

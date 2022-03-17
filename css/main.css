@@ -1,0 +1,438 @@
+/* global css */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    position: relative;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #2a345f;
+}
+.navbar {
+    opacity: 0.9;
+    background: #2a345f;width: 100%;
+    color: #f8e80b;position: relative;
+    z-index: 10;
+  }
+  .logon {
+      width: 2rem;height:2rem;
+  }
+  .nav-menu {
+    color: #f8e80b;
+  }
+  .navbar-toggler {
+    color: #f8e80b;
+    z-index: 2;
+  }
+  .navbar-toggler-icon {
+    color: rgb(146, 121, 121);width: 3rem;
+    height: 3rem;
+  }
+  .nav-menu li.nav-item {
+    margin-right:2rem;width: auto;
+  }
+  .client-area {
+      background-color: rgb(31, 3, 189);
+      border-radius: 10px;
+  }
+  .client-area a {
+      font-weight: bold;padding: auto 1rem auto 1rem;
+  }
+  a.nav-link {
+    color: #f8e80b;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a.nav-link:hover {
+    color: rgb(1, 253, 253);
+  }
+  .head-top {
+    background: url(images/bg-1.jpg) no-repeat cover;position: relative;
+  }
+  .head-top .bg1 {
+    position: relative;max-height: 600px;width: 100%;z-index: 0;
+  }
+  .head-top .bz-imgs {
+    position: absolute;top: 2%;width: 100%;
+  }
+  .head-top .bz-man {
+    height: 560px;float: right;
+  }
+  .head-top .bz-woman {
+    height: 560px;float: left;
+  }
+  .head-top .text-btw{
+    position: absolute;z-index: 2;padding: auto;text-align: center;
+    top: 0;right: 0;left: 0;bottom: 0;color: #f8e80b;margin: 5% auto;
+  }
+  .pseudo-header {
+    width: 100%;height: 8rem;background-color: #465180;
+    position: absolute;z-index: 2;bottom: 0;
+  }
+  .pseudo-header:after {
+    position: absolute;z-index: 2;bottom: 0;height: 100%;width:100%;content: "";
+    top:0;right: 0;bottom: 0;left: 0;background: inherit;z-index: -1;
+    transform-origin: left;transform: skewY(-3deg);
+  }
+  .pseudo-header .inner-cont {
+    margin: 2% auto;padding: auto;width: 100%;
+  }
+  .pseudo-header .inner-temps {
+    display: inline-block;width: 22%;margin: -2rem 1% 1% 1%;text-align: center;
+  }
+  .pseudo-header .inner-temps .inner-text {
+    font-size: 14px;
+  }
+  .main-cont {
+    position: relative;
+  }
+  .main-top .challenge-header1, .challenge-header1 {
+    margin: 2rem auto;padding: 2rem auto;
+  }
+  .main-ad-vid {
+    width: 660px;max-width: 680px;height: 360px;text-align: center;
+    margin: 1rem auto;padding: 1rem auto;border-radius: 3px;
+  }
+  video.main-ad-vid {
+    width: 660px;max-width: 680px;height: 360px;text-align: center;
+    margin: 1rem auto;padding: 1rem auto;border-radius: 3px;
+  }
+  .i-optin a {
+    text-decoration: none;
+  }
+  .i-optin p {
+    color: dimgray;
+  }
+  .concept-section-wrapper {
+    width: 100%;
+  }
+  .concept-section-wrapper .concept-content {
+    margin: 3rem auto;margin-top: 10rem;
+  }
+.footer-widget {
+    margin-top: 10rem;
+    opacity: 0.9;
+    background: #2a345f;
+    color: #f8e80b;background-size: cover;margin-bottom: 0;padding-bottom:0;
+}
+.fa-coins {
+    font-size: 22px;
+}
+.footer-widget .footer-widget-sect {
+    margin: 2rem auto;padding: 2rem auto;margin-top: 1rem;
+}
+.footer-widget .footer-widget-sect h2 {
+    font-family: 'Montserrat';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+}
+.footer-widget .footer-widget-sect .payment-logos {
+    margin-bottom: 1rem;padding-bottom: 2rem;margin:2rem auto 4rem auto;
+}
+.footer-widget .footer-widget-sect ul.coin-payment-logos {
+    list-style: none;margin: 0rem auto;text-align: center;
+}
+.footer-widget .footer-widget-sect ul.coin-payment-logos li {
+    list-style: none;display: inline-block;
+}
+.footer-widget .footer-widget-sect ul.coin-payment-logos li .coins-logo{
+    width: auto;height: 3rem;margin-left: .2rem;margin-top: -2rem;margin-bottom: 2rem;
+    padding-top: 0rem;cursor: pointer;text-align: center;background: #ffffff;
+}
+.footer-widget .footer-widget-sect ul {
+    list-style: none;
+}
+.footer-widget .footer-widget-sect ul li {
+    list-style: none;margin-bottom: 0.5rem;
+}
+/* .footer-widget .footer-widget-sect ul li {
+    list-style: none;margin-bottom: 3rem;
+} */
+.footer-widget .footer-widget-sect ul li a, p{
+    font-family: 'Montserrat';color: #ffffff;
+    text-decoration: none;font-size: 16px;
+}
+.footer-widget .footer-widget-sect ul li a:hover{
+   color: #f7f7f7;
+}
+.end-float {
+    clear: both;
+}
+.footer-main {
+    opacity: 0.9;
+    background: #2a345f !important;
+    color: #f8e80b;margin: auto;
+}
+.footer-main .footer-intro {
+    margin: 5rem auto;padding: 1rem auto;
+}
+.footer-main .footer-intro h2 {
+    font-family: 'Montserrat';margin: 1rem auto 3rem auto;text-align:center;text-transform: uppercase;
+}
+.footer-main .footer-intro p {
+    font-size: 16px;color: #ffffff;margin: .5rem auto;
+    text-align: left;padding: .5rem auto;text-transform: capitalize;
+}
+.footer-main .data-security {
+    margin: 5rem auto;padding: 1rem auto;
+}
+.footer-main .data-security .sec img.moneyback {
+    width: 8rem;margin-bottom: 1rem;
+}
+.footer-main .data-security .sec img.secured2 {
+    width: 17rem;margin-bottom: 1rem;
+}
+.footer-main .data-security p{
+    font-size: 14px;color: #ffffff;margin: .5rem auto;
+    text-align: left;padding: .5rem auto;text-transform: capitalize;
+}
+.footer-main .copywright {
+    margin: 5rem auto;padding: 1rem auto;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 420px) {
+    .navbar {
+        opacity: 0.9;
+        background: #2a345f;
+        color: #f8e80b;
+      }
+      .logon {
+          width: 2rem;height:2rem;
+      }
+      .nav-menu {
+        /* margin-l/eft: 32%; */
+        color: #f8e80b;
+      }
+      .navbar-toggler {
+        color: #f8e80b;
+        /* background: #f8e80b; */
+        z-index: 2;
+      }
+      .navbar-toggler-icon {
+        color: rgb(146, 121, 121);width: 3rem;
+        height: 3rem;
+      }
+      .nav-menu li.nav-item {
+        margin-right:2rem;width: auto;
+      }
+      .client-area {
+          background-color: rgb(31, 3, 189);
+          border-radius: 10px;
+      }
+      .client-area a {
+          font-weight: bold;padding: auto 1rem auto 1rem;
+      }
+      a.nav-link {
+        color: #f8e80b;
+        font-family: Arial;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      a.nav-link:hover {
+        color: rgb(1, 253, 253);
+      }
+    .footer-widget .footer-widget-sect h2 {
+        margin: 1rem auto 3rem auto;font-size: 20px;
+    }
+    .footer-widget .footer-widget-sect .payment-logos {
+        margin-bottom: .5rem;
+    }
+    .footer-main .footer-intro {
+        margin: 3rem auto;padding: .5rem auto;
+    }
+    .footer-main .footer-intro h2 {
+        margin: 1rem auto 3rem auto;font-size: 20px;
+    }
+ 
+}
+
+
+
+
+
+@media screen and (min-width: 420px) and (max-width:560px) {
+    .navbar {
+        opacity: 0.9;
+        background: #2a345f;
+        color: #f8e80b;
+      }
+      .logon {
+          width: 2rem;height:2rem;
+      }
+      .nav-menu {
+        /* margin-l/eft: 32%; */
+        color: #f8e80b;
+      }
+      .navbar-toggler {
+        color: #f8e80b;
+        /* background: #f8e80b; */
+        z-index: 2;
+      }
+      .navbar-toggler-icon {
+        color: rgb(146, 121, 121);width: 3rem;
+        height: 3rem;
+      }
+      .nav-menu li.nav-item {
+        margin-right:2rem;width: auto;
+      }
+      .client-area {
+          background-color: rgb(31, 3, 189);
+          border-radius: 10px;
+      }
+      .client-area a {
+          font-weight: bold;padding: auto 1rem auto 1rem;
+      }
+      a.nav-link {
+        color: #f8e80b;
+        font-family: Arial;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      a.nav-link:hover {
+        color: rgb(1, 253, 253);
+      }
+    .footer-widget .footer-widget-sect h2 {
+        margin: 1rem auto 3rem auto;font-size: 20px;
+    }
+    .footer-widget .footer-widget-sect .payment-logos {
+        margin-bottom: .5rem;
+    }
+    .footer-main .footer-intro {
+        margin: 3rem auto;padding: .5rem auto;
+    }
+    .footer-main .footer-intro h2 {
+        margin: 1rem auto 3rem auto;font-size: 20px;
+    }
+ 
+}
+
+
+
+
+  @media screen and (min-width: 560px) and (max-width:768px) {
+    .navbar {
+        opacity: 0.9;
+        background: #2a345f;
+        color: #f8e80b;
+      }
+      .logon {
+          width: 2rem;height:2rem;
+      }
+      .nav-menu {
+        /* margin-l/eft: 32%; */
+        color: #f8e80b;
+      }
+      .navbar-toggler {
+        color: #f8e80b;
+        /* background: #f8e80b; */
+        z-index: 2;
+      }
+      .navbar-toggler-icon {
+        color: rgb(146, 121, 121);width: 3rem;
+        height: 3rem;
+      }
+      .nav-menu li.nav-item {
+        margin-right:2rem;width: auto;
+      }
+      .client-area {
+          background-color: rgb(31, 3, 189);
+          border-radius: 10px;
+      }
+      .client-area a {
+          font-weight: bold;padding: auto 1rem auto 1rem;
+      }
+      a.nav-link {
+        color: #f8e80b;
+        font-family: Arial;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      a.nav-link:hover {
+        color: rgb(1, 253, 253);
+      }
+    .footer-widget {
+        opacity: 0.9;
+        background: #2a345f;
+        color: #f8e80b;background-size: cover;margin-bottom: 0;padding-bottom:0;
+    }
+    .footer-widget .footer-widget-sect {
+        margin: 2rem auto;padding: 2rem auto;margin-top: 1rem;
+    }
+    .footer-widget .footer-widget-sect h2 {
+        font-size: 25px;
+    }
+    
+    .footer-main .footer-intro h2 {
+        font-size: 25px;
+    }
+  }
+
+
+
+
+
+
+
+  @media screen and (min-width:768px) and (max-width: 1068px) {
+   .navbar {
+       opacity: 0.9;
+       background: #2a345f;
+       color: #f8e80b;
+     }
+     .logon {
+         width: 2rem;height:2rem;
+     }
+    .footer-widget .footer-widget-sect h2 {
+        font-size: 22px;
+    }
+    .footer-main .footer-intro h2 {
+        font-size: 22px;
+    }
+  }
+
+
+
+
+  @media screen and (min-width:1068px) and (max-width: 1268px) {
+    .navbar {
+        opacity: 0.9;
+        background: #2a345f;
+        color: #f8e80b;
+      }
+      .logon {
+          width: 2rem;height:2rem;
+      }
+     .footer-widget .footer-widget-sect h2 {
+         font-size: 22px;
+     }
+     .footer-main .footer-intro h2 {
+         font-size: 22px;
+     }
+   }
+
+   
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1606220471 svg {
+        width: calc(100% + 1.3px);
+        height: 272px;
+    }
+}

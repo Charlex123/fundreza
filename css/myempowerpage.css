@@ -1,0 +1,163 @@
+.main-emp-thumbnail.container {
+    background-color: #f1f1f1;margin-left: .2rem;
+}
+.wrap {
+    padding: 1rem;border-radius: 2px;
+}
+.main-emp-thumbnail.container .thumbnail-img {
+    max-width: 100%;
+}
+#empowerdetails h1 {
+    font-size: 26px;color: #001737;font-family: 'Montserrat';
+    margin: 2rem auto;padding: .6rem;
+}
+#empowerdetails p.e-content {
+    font-size: 16px;font-family: sans-serif;line-height: 26px;
+    text-align: left;
+}
+.follow {
+    position: relative;width: 100%;margin: 1rem auto;padding-bottom: 2rem;
+}
+.follow button {
+    float: right;text-align: right;background-color: orange;padding: .4rem .6rem;
+    border: none;border-radius: 4px;color: #f3f3f3;font-family: 'Montserrat';
+    font-weight: 600;
+}
+.select-doc {
+    margin: 4rem auto;padding: 1rem auto;
+}
+.fa-file-pdf {
+    color: red;
+}
+.fa-smile-beam {
+    color: orange;
+}
+.fa-hand-spock {
+    color: orange;
+}
+.user-interactions {
+    margin: 1rem auto;padding: 1rem auto;position: relative;
+}
+.user-interactions .u-i {
+    margin-right: 2rem;padding-right: .6rem;color: orange;
+}
+.user-interactions .update {
+    cursor: pointer;
+}
+.page-owner {
+    margin: 1rem auto;padding: 1rem auto;
+}
+.share-container {
+    border: none;
+}
+.modala {
+    display: none;position: absolute;z-index: 1;width: 60%;border: none;
+    margin-top: 2rem;
+}
+.modala .modal-content {
+    border: none;box-shadow: 1px 1px 3px 3px #f1f1f1;
+}
+.modala .social-medial-channels {
+    display: inline-block;margin-top: .8rem;margin-bottom: .8rem;
+}
+.modala .social-medial-channels .share-modal {
+    margin: 1.4rem .8rem .8rem 0;
+}
+.modala .copy {
+    margin: .4rem auto .8rem auto;font-size: .8rem;
+}
+.modala .pasteurl {
+    margin: .2rem auto .4rem auto;font-size: .8rem;border-radius: 3px;
+    border: 1px solid #f7f7f7;width: 90%;background: #f9f9f9;height: auto;
+    padding: .4rem .8rem;
+}
+.modala .cancelnow {
+    position: relative;width: 4rem;font-size: .6rem;margin-bottom: 1.3rem;float:right;
+    margin-top: 1rem;color: #f3f3f3;background-color: orange;right: 5%;left: 80%;
+    text-align: center;border: none;
+}
+.login-alert {
+    display: none;background-color: #ffffff;box-shadow: 1px 1px 2px 2px #f1f1f1;position: absolute;
+    padding: .4rem .6rem;margin-top: 1rem;left: 20%;right: 20%;width: auto;color: #001737;
+    font-family: "Source Sans Pro", sans-serif;font-size: 12px;font-weight: 500;
+}
+.login-alert a {
+    color: orange;text-decoration: none;font-weight: 600;
+}
+.login-alert a:hover {
+    color: #001737;
+}
+.user-empowerlist {
+    padding: 1rem;border-radius: 2px;
+}
+.user-empowerlist .user-emplist {
+    margin: 1rem .1rem;padding: .6rem .1rem;font-weight: bold;font-size: 20px;
+    font-family: 'Montserrat';
+}
+.emp-thumb {
+    max-height: 5rem;
+}
+.listings .ro .e-title {
+    margin-top: .2rem;font-size: 14px;margin-bottom: 2rem;margin-left: -.6rem;text-align: left;
+}
+.listings .rowt .user-react,.listings .rowt .tripple-vote {
+    font-size: 12px;
+}
+.user-bio {
+    padding: 1rem;border-radius: 2px;
+}
+.user-bio h3 {
+    color: #606368;font-family: "Source Sans Pro", sans-serif;margin: 0 auto 2rem auto;
+    text-transform: capitalize;font-weight: bold;text-shadow: 3px 1px #ffffff;
+}
+.user-bio .user-name {
+    font-weight: 600;
+}
+.user-bio p {
+    line-height: 22px;
+}
+.user-bio button {
+    background-color: orange;padding: .4rem .6rem;
+    border: none;border-radius: 4px;color: #f3f3f3;font-family: 'Montserrat';
+    font-weight: 600;margin: 2rem auto;
+}
+.user-bio .lift-up {
+    color: rgb(212, 140, 7);font-family: 'Montserrat';font-size: 12px;
+    font-weight: 600;
+}
+.user-bio .user-up blockquote {
+    text-align: left;background-color: #f1f1f1;padding: 2rem;margin: .6rem auto;
+    font-size: 12px;font-family: 'Montserrat';
+}
+.fa-quote-left,.fa-quote-right {
+    color: #a3a2a2;
+}
+.user-bio .donate-warning {
+    margin: 1rem auto;padding: .4rem;
+}
+.user-bio .donate-warning .no-wrap-warn {
+    /* white-space: nowrap; */
+}
+.user-bio .donate-warning .mv-lft {
+    float: left;
+}
+.user-bio .donate-warning .warn {
+    font-weight: bolder;font-family: 'Montserrat';font-size: 12px;margin-top: -2.4rem;
+    float: right;margin-left: 40px;
+}
+.fa-exclamation-triangle {
+    color: orange;margin-right: .6rem;padding-right: .2rem;
+    font-size: 36px;
+}
+.user-bio .our-vision {
+    text-align: left;margin: 1rem auto;
+}
+.user-bio .our-vision .vision{
+    margin: 1rem .1rem;padding: .6rem .1rem;font-weight: bold;
+}
+.user-bio .our-vision p {
+    font-style: oblique;padding: .4rem;
+}
+.user-bio .our-vision p .brain-drain,.user-bio .our-vision p .industrious {
+    font-weight: bolder;
+}

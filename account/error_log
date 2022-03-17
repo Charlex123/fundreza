@@ -1,0 +1,7 @@
+[05-Sep-2021 15:29:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'donation_table.donationsReceived' in 'field list' in /home/fundgcmf/public_html/dbh.php:3240
+Stack trace:
+#0 /home/fundgcmf/public_html/account/dashboard.php(535): dbh->myFundraisers()
+#1 {main}
+  thrown in /home/fundgcmf/public_html/dbh.php on line 3240
+[12-Sep-2021 07:10:21 UTC] PHP Notice:  Undefined index: fundraiserdonationsReceived in /home/fundgcmf/public_html/account/edit.php on line 365
+[12-Sep-2021 07:10:21 UTC] PHP Notice:  Undefined variable: body in /home/fundgcmf/public_html/account/edit.php on line 484
